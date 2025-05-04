@@ -40,7 +40,7 @@ import Image from "next/image"
 import { Footer } from "@/components/footer"
 
 // Category card component
-const CategoryCard = ({ icon, title, description }) => (
+const CategoryCard = ({ icon, title, description }: any) => (
   <Card className="border-none shadow-lg transition-all duration-300 hover:shadow-xl h-full">
     <CardHeader className="pb-2">
       <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-coral-100">{icon}</div>
@@ -383,11 +383,10 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center px-6 py-3 text-sm font-medium rounded-full mx-2 mb-2 transition-all duration-200 ${
-                  activeTab === index
+                className={`flex items-center px-6 py-3 text-sm font-medium rounded-full mx-2 mb-2 transition-all duration-200 ${activeTab === index
                     ? "bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-md"
                     : "bg-white text-slate-700 border border-slate-200 hover:border-coral-300 hover:text-coral-600"
-                }`}
+                  }`}
               >
                 {tab.icon}
                 {tab.name}
