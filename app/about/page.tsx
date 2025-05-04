@@ -108,9 +108,13 @@ export default function AboutPage() {
           </div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="relative h-64 w-full bg-slate-100">
-                <Image src="/ceo-headshot.png" alt="Dharani Malladi" fill className="object-cover" />
+            <Card className="border-none shadow-lg">
+              <div className="h-64 w-full bg-slate-100">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Dharani_Malladi_lfoe95.jpg-8MdQLLGZ6ae15UgBNwGE8joUFUT7p0.jpeg"
+                  alt="Dharani Malladi"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-900">Dharani Malladi</h3>
@@ -124,9 +128,13 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="relative h-64 w-full bg-slate-100">
-                <Image src="/director-headshot.png" alt="Aish Prasad" fill className="object-cover" />
+            <Card className="border-none shadow-lg">
+              <div className="h-64 w-full bg-slate-100">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Aish_Prasad_Picture_oymyje.jpg-kHSv9NRTTeDstmDQPzOBk3fyiz0nVb.jpeg"
+                  alt="Aish Prasad"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-900">Aish Prasad</h3>
@@ -140,9 +148,13 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="relative h-64 w-full bg-slate-100">
-                <Image src="/placeholder.svg?key=0c4xc" alt="Suresh M" fill className="object-cover" />
+            <Card className="border-none shadow-lg">
+              <div className="h-64 w-full bg-slate-100">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/suresh.jpg-iC3tgjQqtiDijRuIhJHKjDizzNKnZu.jpeg"
+                  alt="Suresh M"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-900">Suresh M, Ph.D</h3>
@@ -156,9 +168,13 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="relative h-64 w-full bg-slate-100">
-                <Image src="/placeholder.svg?key=met8g" alt="Akhilesh Yadav" fill className="object-cover" />
+            <Card className="border-none shadow-lg">
+              <div className="h-64 w-full bg-slate-100">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/dark-haired-man-headshot-7AUlI3dP3fTxtMANzBL2SMtYeo3D6e.png"
+                  alt="Akhilesh Yadav"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-900">Akhilesh Yadav, PhD</h3>
@@ -172,9 +188,13 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="relative h-64 w-full bg-slate-100">
-                <Image src="/placeholder.svg?key=65jfq" alt="Dr. Balaji Kalluri" fill className="object-cover" />
+            <Card className="border-none shadow-lg">
+              <div className="h-64 w-full bg-slate-100">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Balaji_Kalluri_eklkb4.jpg-goqEz6qssceLXRw3AxVqCi4hSb0EMt.jpeg"
+                  alt="Dr. Balaji Kalluri"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-900">Dr. Balaji Kalluri</h3>
@@ -188,9 +208,13 @@ export default function AboutPage() {
               </CardContent>
             </Card>
 
-            <Card className="border-none shadow-lg overflow-hidden">
-              <div className="relative h-64 w-full bg-slate-100">
-                <Image src="/iot-engineer-headshot.png" alt="Venkatesh GR" fill className="object-cover" />
+            <Card className="border-none shadow-lg">
+              <div className="h-64 w-full bg-slate-100">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Venkii_Pic_40KB_dya3u9.jpg-71zobv6piRown9yojryqeJLnJcQGOp.jpeg"
+                  alt="Venkatesh GR"
+                  className="h-full w-full object-contain"
+                />
               </div>
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-slate-900">Venkatesh GR</h3>

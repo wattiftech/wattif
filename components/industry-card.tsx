@@ -8,11 +8,11 @@ interface IndustryCardProps {
   icon: ReactNode
   title: string
   description: string
-  highlight?: string
+  highlight: string
   href: string
 }
 
-export function IndustryCard({ icon, title, description, highlight="", href }: IndustryCardProps) {
+export function IndustryCard({ icon, title, description, highlight, href }: IndustryCardProps) {
   return (
     <Card className="flex h-full flex-col transition-all duration-300 hover:shadow-lg">
       <CardHeader className="pb-2">
@@ -22,13 +22,7 @@ export function IndustryCard({ icon, title, description, highlight="", href }: I
         <h3 className="text-xl font-medium">{title}</h3>
       </CardHeader>
       <CardContent className="flex-grow">
-        <p className="mb-4 text-slate-600">{description}</p>
-       {highlight && <div className="rounded-md bg-slate-50 p-3">
-          <p className="text-sm font-medium text-slate-700">
-            <span className="text-coral-600">Success Story: </span>
-            {highlight}
-          </p>
-        </div>}
+        <p className="text-slate-600">{description}</p>
       </CardContent>
       <CardFooter>
         <Link href={href} className="flex items-center text-coral-600 hover:text-coral-700 text-sm font-medium">

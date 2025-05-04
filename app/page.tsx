@@ -37,9 +37,10 @@ import { IndustryCard } from "@/components/industry-card"
 import { Navbar } from "@/components/navbar"
 import Link from "next/link"
 import Image from "next/image"
+import { Footer } from "@/components/footer"
 
 // Category card component
-const CategoryCard = ({ icon, title, description }: any) => (
+const CategoryCard = ({ icon, title, description }) => (
   <Card className="border-none shadow-lg transition-all duration-300 hover:shadow-xl h-full">
     <CardHeader className="pb-2">
       <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-coral-100">{icon}</div>
@@ -382,10 +383,11 @@ export default function Home() {
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`flex items-center px-6 py-3 text-sm font-medium rounded-full mx-2 mb-2 transition-all duration-200 ${activeTab === index
+                className={`flex items-center px-6 py-3 text-sm font-medium rounded-full mx-2 mb-2 transition-all duration-200 ${
+                  activeTab === index
                     ? "bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-md"
                     : "bg-white text-slate-700 border border-slate-200 hover:border-coral-300 hover:text-coral-600"
-                  }`}
+                }`}
               >
                 {tab.icon}
                 {tab.name}
@@ -479,38 +481,23 @@ export default function Home() {
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-b from-coral-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 mb-6">
                 <div className="absolute -inset-3 bg-gradient-to-r from-coral-200/30 to-coral-300/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                {/* Update start */}
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
-                  <div className="relative">
-                    <Image
-                      src="/energy-analytics-dashboard.png"
-                      alt="Wattif AI energy analytics dashboard"
-                      width={300}
-                      height={200}
-                      className="object-cover w-full"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  </div>
-                  <div className="relative mt-1">
-                    <Image
-                      src="/energy-monitoring-dashboard-detail.png"
-                      alt="Wattif detailed energy monitoring metrics"
-                      width={300}
-                      height={200}
-                      className="object-cover w-full"
-                    />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-coral-500/90 to-coral-500/0 p-3 pt-8">
-                      <h3 className="text-white font-bold text-lg">Continuous Learning</h3>
-                    </div>
+                  <Image
+                    src="/energy-analytics-dashboard-detail.png"
+                    alt="Wattif detailed energy monitoring dashboard"
+                    width={300}
+                    height={200}
+                    className="object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-coral-500/90 to-coral-500/0 p-3 pt-8">
+                    <h3 className="text-white font-bold text-lg">Continuous Learning</h3>
                   </div>
                 </div>
-                {/* Update end */}
               </div>
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-5 shadow-lg border border-slate-100/50 relative z-10">
                 <p className="text-slate-600 text-center">
                   Our analytics platform continuously improves as it learns your building's unique patterns, identifying
-                  new optimization opportunities and adapting to operational changes automatically. The system becomes
-                  more intelligent over time, detecting subtle energy waste patterns that would otherwise go unnoticed.
+                  new optimization opportunities and adapting to operational changes automatically.
                 </p>
               </div>
             </div>
@@ -976,35 +963,12 @@ export default function Home() {
             className="absolute inset-0"
             style={{
               backgroundImage:
-                "radial-gradient(circle at 30% 20%, rgba(233, 66, 52, 0.02), transparent 25%), radial-gradient(circle at 70% 65%, rgba(0, 112, 243, 0.02), transparent 25%)"
+                "radial-gradient(circle at 30% 20%, rgba(233, 66, 52, 0.02), transparent 25%), radial-gradient(circle at 70% 65%, rgba(0, 112, 243, 0.02), transparent 25%)",
             }}
           ></div>
         </div>
 
-        {/* CTA Content */}
-        <div className="container relative mx-auto px-4 md:px-6 z-10">
-          <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-            <div className="p-8 md:p-12">
-              <div className="text-center mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                  Ready to Unlock Hidden Energy Savings?
-                </h2>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                  Schedule a consultation with our energy experts to discover how Wattif can transform your facility's energy management.
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button size="lg" className="bg-coral-500 hover:bg-coral-600 text-white px-8 py-6">
-                  Book a Demo
-                </Button>
-                <Button size="lg" variant="outline" className="border-coral-200 text-coral-600 hover:bg-coral-50 px-8 py-6">
-                  Contact Sales
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Footer />
       </section>
     </div>
   )

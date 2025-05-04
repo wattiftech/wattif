@@ -163,6 +163,16 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <a
+                  href="https://www.notch.energy/privacy-policy"
+                  className="hover:text-coral-400"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Privacy Policy
+                </a>
+              </li>
             </ul>
 
             <address className="mt-6 not-italic text-sm">

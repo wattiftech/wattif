@@ -284,7 +284,7 @@ export default function ElementsPage() {
       <PageHeader
         title="Wattif Elements"
         description="Energy-Focused Solutions for Six Building Types"
-        // image="/modular-energy-dashboard.png"
+        image="/modular-energy-dashboard.png"
       />
 
       {/* Hero Section with Animated Illustration */}
