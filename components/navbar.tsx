@@ -36,7 +36,7 @@ export function Navbar() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="link" className="flex items-center gap-1 text-slate-700">
+              <Button variant="link" className="flex items-center gap-1 font-medium text-slate-700 hover:text-coral-500 p-0 h-auto text-base">
                 Solutions
                 <ChevronDown className="h-4 w-4" />
               </Button>
@@ -62,7 +62,7 @@ export function Navbar() {
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="link" className="flex items-center gap-1 text-slate-700">
+              <Button variant="link" className="flex items-center gap-1 font-medium text-slate-700 hover:text-coral-500 p-0 h-auto text-base">
                 Industries
                 <ChevronDown className="h-4 w-4" />
               </Button>
@@ -101,15 +101,15 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link href="/pricing" className="text-slate-700 hover:text-coral-500">
+          <Link href="/pricing" className="font-medium text-slate-700 hover:text-coral-500">
             Pricing
           </Link>
 
-          <Link href="/about" className="text-slate-700 hover:text-coral-500">
+          <Link href="/about" className="font-medium text-slate-700 hover:text-coral-500">
             About
           </Link>
 
-          <Link href="/contact" className="text-slate-700 hover:text-coral-500">
+          <Link href="/contact" className="font-medium text-slate-700 hover:text-coral-500">
             Contact
           </Link>
         </nav>
@@ -121,15 +121,18 @@ export function Navbar() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu className="h-6 w-6" />
+              <Menu className="h-8 w-8" />
               <span className="sr-only">Toggle menu</span>
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-            <div className="flex flex-col gap-6 pt-6">
+          <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
+            <div className="flex flex-col gap-6 pt-3">
               <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-                <span className="text-2xl font-bold text-coral-500">Wattif</span>
-                <span className="text-2xl font-light text-slate-900">Tech</span>
+                {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
+                <span className="text-2xl font-light text-slate-900">Tech</span> */}
+
+                <Image src="/watif_logo_black.png" width={20} height={32} alt="Wattif Logo" className="h-6 w-auto" />
+
               </Link>
 
               <div className="flex flex-col space-y-3">
