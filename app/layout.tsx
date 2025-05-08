@@ -2,24 +2,18 @@ import type React from "react"
 import "@/app/globals.css"
 
 import { Inter } from "next/font/google"
-import { Metadata } from "next"
+
 import { ThemeProvider } from "@/components/theme-provider"
+import Head from "next/head"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Wattif Technologies - See the Energy Your Building is Hiding",
   description:
     "Wattif's non-invasive monitoring solution reveals the complete energy story of your business—showing you exactly where energy is being used, when, and how much it's costing you.",
-  metadataBase: new URL("https://wattif.io"),
-  openGraph: {
-    title: "Wattif Technologies - See the Energy Your Building is Hiding",
-    description: "Wattif's non-invasive monitoring solution reveals the complete energy story of your business—showing you exactly where energy is being used, when, and how much it's costing you.",
-    url: "https://wattif.io",
-    siteName: "Wattif Technologies",
-    type: "website",
-  },
 }
+
 
 export default function RootLayout({
   children,
@@ -29,6 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Head>
+          <link rel="icon" href="./favicon.ico" sizes="any" />
+        </Head>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>

@@ -517,7 +517,7 @@ export default function EducationalBuildingsPage() {
               <Button asChild size="lg" className="bg-coral-500 hover:bg-coral-600">
                 <Link href="/contact">Request a Demo</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-slate-300 text-white hover:bg-slate-700">
+              <Button asChild size="lg" variant="outline" className="border-slate-300 hover:text-white hover:bg-slate-700 text-black">
                 <Link href="/solutions/enterprise">Learn About Wattif Enterprise</Link>
               </Button>
             </div>

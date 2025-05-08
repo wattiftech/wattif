@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Linkedin } from "lucide-react"
+import Image from "next/image"
 
 export function Footer() {
   const pathname = usePathname()
@@ -69,8 +70,9 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center">
-              <span className="text-2xl font-bold text-coral-400">Wattif</span>
-              <span className="text-2xl font-light text-white">Tech</span>
+              {/* <span className="text-2xl font-bold text-coral-400">Wattif</span>
+              <span className="text-2xl font-light text-white">Tech</span> */}
+              <Image src="/watif_logo_white.png" width={20} height={32} alt="Wattif Logo" className="h-5 w-auto" />  
             </Link>
             <p className="mt-2 text-sm">
               Revealing the complete energy story of your business—showing you exactly where energy is being used, when,

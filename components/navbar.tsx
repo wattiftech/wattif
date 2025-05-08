@@ -7,6 +7,7 @@ import { ChevronDown, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,8 +17,11 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-coral-500">Wattif</span>
-            <span className="text-2xl font-light text-slate-900">Tech</span>
+            {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
+            <span className="text-2xl font-light text-slate-900">Tech</span> */}
+
+            <Image src="/watif_logo_black.png" width={20} height={32} alt="Wattif Logo" className="h-5 w-auto" />
+
           </Link>
         </div>
 

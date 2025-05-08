@@ -18,7 +18,7 @@ export default function NotchPage() {
           <div className="container relative mx-auto px-4 py-24 md:px-6">
             <div className="mx-auto max-w-4xl">
               <div className="mb-8 flex items-center justify-center md:justify-start">
-                <Image src="/notch-logo.png" alt="Notch Logo" width={180} height={60} className="h-24 w-auto" />
+                <Image src="/notch-logo.png" alt="Notch Logo" width={180} height={60} className="h-auto w-auto" />
               </div>
 
               <div className="mb-6 inline-block rounded-full bg-coral-100 px-4 py-1 text-sm font-medium text-coral-600">
