@@ -8,10 +8,11 @@ interface IndustryCardProps {
   icon: ReactNode
   title: string
   description: string
+  highlight: string
   href: string
 }
 
-export function IndustryCard({ icon, title, description, href }: IndustryCardProps) {
+export function IndustryCard({ icon, title, description, highlight, href }: IndustryCardProps) {
   return (
     <Card className="flex h-full flex-col transition-all duration-300 hover:shadow-lg">
       <CardHeader className="pb-2">

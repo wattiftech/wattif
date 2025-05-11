@@ -11,7 +11,6 @@ export const metadata = {
   title: "Wattif Technologies - See the Energy Your Building is Hiding",
   description:
     "Wattif's non-invasive monitoring solution reveals the complete energy story of your business—showing you exactly where energy is being used, when, and how much it's costing you.",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({

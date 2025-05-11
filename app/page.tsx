@@ -1042,7 +1042,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative pt-32 overflow-hidden">
+      <section className="relative py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(#fcfcfc_1px,transparent_1px)] [background-size:16px_16px] opacity-70"></div>
         <div className="absolute inset-0">
           <div className="absolute top-0 left-1/4 w-72 h-72 bg-coral-50 rounded-full mix-blend-multiply opacity-30 blur-3xl"></div>
