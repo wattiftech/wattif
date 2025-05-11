@@ -14,10 +14,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
-      <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
-          <Link href="/" className="flex items-center">
-            <Image src="/Wattif_Logo_Black_Top Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-10 w-auto" />
+          <Link href="/" className="flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
+            <Image src="/logo.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+            <Image src="/tagline.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
             {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
             <span className="text-2xl font-light text-slate-900">Tech</span> */}
           </Link>
@@ -128,7 +129,7 @@ export function Navbar() {
                 {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
                 <span className="text-2xl font-light text-slate-900">Tech</span> */}
 
-                <Image src="/Wattif_Logo_Black_Top Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-10 w-auto" />
+                <Image src="/Wattif_Logo_Black_Top Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-14 w-auto" />
 
               </Link>
 
