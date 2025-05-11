@@ -17,10 +17,9 @@ export function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Link href="/" className="flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
-            <Image src="/logo.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
-            <Image src="/tagline.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
-            {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
-            <span className="text-2xl font-light text-slate-900">Tech</span> */}
+            <Image src="/logo-brown.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+            <Image src="/tagline-brown.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+
           </Link>
         </div>
 
@@ -126,10 +125,9 @@ export function Navbar() {
           <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
             <div className="flex flex-col gap-6 pt-6">
               <Link href="/" className="flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
-                <Image src="/logo.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
-                <Image src="/tagline.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
-                {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
-            <span className="text-2xl font-light text-slate-900">Tech</span> */}
+                <Image src="/logo-brown.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+                <Image src="/tagline-brown.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+
               </Link>
 
               <div className="flex flex-col gap-y-3">

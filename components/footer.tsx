@@ -69,8 +69,10 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6 relative z-10">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="mb-4 flex items-center">
-              <Image src="/Wattif_Logo_Black_Footer_Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-14 w-auto" />
+            <Link href="/" className="mb-4 flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
+              <Image src="/logo-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+              <Image src="/tagline-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+
             </Link>
             <p className="mt-2 text-sm">
               Revealing the complete energy story of your business—showing you exactly where energy is being used, when,

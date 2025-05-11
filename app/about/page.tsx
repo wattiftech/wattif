@@ -13,7 +13,11 @@ export default function AboutPage() {
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <PageHeader title="About Wattif" description="Energy Intelligence Reimagined" />
+      <PageHeader title="About Wattif" description="Energy Intelligence Reimagined" icon={<Link href="/" className="flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
+        <Image src="/logo-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+        <Image src="/tagline-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+
+      </Link>} />
 
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 md:px-6">
