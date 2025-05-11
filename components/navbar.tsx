@@ -7,6 +7,7 @@ import { ChevronDown, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import Image from "next/image"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -16,20 +17,21 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-coral-500">Wattif</span>
-            <span className="text-2xl font-light text-slate-900">Tech</span>
+            <Image alt="Logo" height={32} width={32} className="h-5 w-auto" src={"/watif_logo_black.png"} />
+            {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
+            <span className="text-2xl font-light text-slate-900">Tech</span> */}
           </Link>
         </div>
 
         <nav className="hidden items-center space-x-6 md:flex">
-          <Link href="/solutions/notch" className="relative flex items-center text-coral-500 hover:text-coral-600">
+          <Link href="/solutions/notch" className="relative flex items-center text-coral-500 hover:text-coral-600 text-[15px] font-medium">
             Notch
             <span className="absolute -top-2 -right-2 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-coral-500 to-coral-400 shadow-md"></span>
           </Link>
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="link" className="flex items-center gap-1 text-slate-700">
+            <DropdownMenuTrigger asChild className="p-0 focus:outline-none focus:border-none focus:ring-0 ">
+              <Button style={{ border: "none", outline: "none" }} variant="link" className="flex items-center gap-1 text-slate-700 p-0 focus:outline-none focus:border-none focus:ring-0 text-[15px] ">
                 Solutions
                 <ChevronDown className="h-4 w-4" />
               </Button>
@@ -54,8 +56,8 @@ export function Navbar() {
           </DropdownMenu>
 
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="link" className="flex items-center gap-1 text-slate-700">
+            <DropdownMenuTrigger asChild className="p-0 outline-none border-none ring-0">
+              <Button variant="link" className="flex items-center gap-1 text-slate-700 p-0 outline-none border-none ring-0 text-[15px]">
                 Industries
                 <ChevronDown className="h-4 w-4" />
               </Button>
@@ -94,15 +96,15 @@ export function Navbar() {
             </DropdownMenuContent>
           </DropdownMenu>
 
-          <Link href="/pricing" className="text-slate-700 hover:text-coral-500">
+          <Link href="/pricing" className="text-slate-700 hover:text-coral-500 text-[15px] font-medium">
             Pricing
           </Link>
 
-          <Link href="/about" className="text-slate-700 hover:text-coral-500">
+          <Link href="/about" className="text-slate-700 hover:text-coral-500 text-[15px] font-medium">
             About
           </Link>
 
-          <Link href="/contact" className="text-slate-700 hover:text-coral-500">
+          <Link href="/contact" className="text-slate-700 hover:text-coral-500 text-[15px] font-medium">
             Contact
           </Link>
         </nav>
@@ -123,8 +125,11 @@ export function Navbar() {
           <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
             <div className="flex flex-col gap-6 pt-6">
               <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
-                <span className="text-2xl font-bold text-coral-500">Wattif</span>
-                <span className="text-2xl font-light text-slate-900">Tech</span>
+                {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
+                <span className="text-2xl font-light text-slate-900">Tech</span> */}
+
+                <Image alt="Logo" height={32} width={32} className="h-5 w-auto" src={"/watif_logo_black.png"} />
+
               </Link>
 
               <div className="flex flex-col gap-y-3">
