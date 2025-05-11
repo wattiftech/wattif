@@ -72,7 +72,7 @@ export function Footer() {
             <Link href="/" className="mb-4 flex items-center">
               {/* <span className="text-2xl font-bold text-coral-400">Wattif</span>
               <span className="text-2xl font-light text-white">Tech</span> */}
-              <Image src="/Wattif_Logo-transparent.png" width={20} height={32} alt="Wattif Logo" className="h-12 w-auto" />  
+              <Image src="/Wattif_Logo_Black_Footer_Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-10 w-auto" />  
             </Link>
             <p className="mt-2 text-sm">
               Revealing the complete energy story of your business—showing you exactly where energy is being used, when,
