@@ -66,7 +66,7 @@ export function Footer() {
     <footer className="relative bg-slate-900 text-slate-300 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b40_1px,transparent_1px),linear-gradient(to_bottom,#1e293b40_1px,transparent_1px)] [background-size:32px_32px] opacity-30"></div>
 
-      <div className="container mx-auto px-4 py-12 md:px-6">
+      <div className="container mx-auto px-4 py-12 md:px-6 relative z-10">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <Link href="/" className="mb-4 flex items-center">

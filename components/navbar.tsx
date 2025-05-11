@@ -24,7 +24,7 @@ export function Navbar() {
           </Link>
         </div>
 
-        <nav className="hidden items-center space-x-6 md:flex">
+        <nav className="hidden items-center  md:gap-x-2 lg:gap-x-6 md:flex">
           <Link href="/solutions/notch" className="relative flex items-center text-coral-500 hover:text-coral-600 text-[15px] font-medium">
             Notch
             <span className="absolute -top-2 -right-2 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-coral-500 to-coral-400 shadow-md"></span>
@@ -125,12 +125,11 @@ export function Navbar() {
           </SheetTrigger>
           <SheetContent side="right" className="w-[300px] sm:w-[400px] overflow-y-auto">
             <div className="flex flex-col gap-6 pt-6">
-              <Link href="/" className="flex items-center" onClick={() => setIsOpen(false)}>
+              <Link href="/" className="flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
+                <Image src="/logo.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+                <Image src="/tagline.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
                 {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
-                <span className="text-2xl font-light text-slate-900">Tech</span> */}
-
-                <Image src="/Wattif_Logo_Black_Top Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-14 w-auto" />
-
+            <span className="text-2xl font-light text-slate-900">Tech</span> */}
               </Link>
 
               <div className="flex flex-col gap-y-3">
