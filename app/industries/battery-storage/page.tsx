@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Microscope, CheckCircle2, FlaskRound, Thermometer, Calculator, Shield, Cog } from "lucide-react"
+import Image from "next/image"
+import { CheckCircle2, Microscope, FlaskRoundIcon as Flask, ClipboardCheck, Lightbulb } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -13,58 +14,61 @@ export default function RDFacilitiesPage() {
       <Navbar />
 
       <PageHeader
-        title="R&D Facilities"
-        description="Optimize energy efficiency without compromising research integrity or safety protocols"
+        title="R&D Facilities: Precision Monitoring for Innovation"
+        description="Optimize energy efficiency without disrupting critical research"
         icon={<Microscope className="h-12 w-12 text-coral-500" />}
       />
 
+      {/* Hero Section */}
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-12 md:grid-cols-2">
-            <div>
-              <h2 className="mb-6 text-3xl font-bold text-slate-900">Unique Energy Challenges for R&D Facilities</h2>
-              <p className="mb-4 text-lg text-slate-600">
-                R&D facilities face distinctive energy management challenges that standard commercial approaches fail to
-                address. From specialized equipment with variable usage patterns to critical environmental requirements,
-                these facilities require tailored solutions that protect research integrity while optimizing efficiency.
-              </p>
-              <p className="mb-4 text-lg text-slate-600">
-                Traditional energy monitoring systems often can't accommodate the complex needs of research
-                environments, where safety protocols, specialized infrastructure, and precise environmental controls
-                create a unique energy profile that's difficult to optimize without compromising research quality.
+            <div className="flex flex-col justify-center space-y-4">
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900">The R&D Energy Challenge</h2>
+              <p className="text-lg text-slate-600">Innovation can't wait for maintenance.</p>
+              <p className="text-lg font-semibold text-coral-600">
+                Research labs and innovation centers demand absolute precision, reliability, and compliance.
               </p>
               <p className="text-lg text-slate-600">
-                Wattif's non-invasive monitoring approach provides the granular visibility needed to understand these
-                complex environments without disrupting critical research activities or requiring system shutdowns.
+                But traditional sensors are disruptive to install, require regular upkeep, and can't always adapt to
+                rapidly changing research needs.
               </p>
             </div>
-            <div className="flex items-center justify-center">
-              <div className="relative h-[400px] w-full overflow-hidden rounded-xl shadow-xl">
-                <img
-                  src="/rd-facilities-illustration.jpg"
-                  alt="Modern research laboratory with integrated energy monitoring"
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
+              <Image
+                src="/energy-analytics-dashboard-detail.png"
+                alt="R&D facility with energy monitoring"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Problems Section */}
       <section className="bg-slate-50 py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-8 text-center text-3xl font-bold text-slate-900">How Wattif Supports R&D Facilities</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="mb-12 text-center text-3xl font-bold text-slate-900">The Problems You Face</h2>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             <Card className="border-none shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Cog className="h-6 w-6 text-coral-600" />
+                  <Flask className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Specialized Equipment Monitoring</h3>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Sensitive Environments</h3>
+                <p className="text-slate-600">Labs and cleanrooms can't tolerate downtime or invasive installations.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-lg">
+              <CardContent className="p-6">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
+                  <Lightbulb className="h-6 w-6 text-coral-600" />
+                </div>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Evolving Needs</h3>
                 <p className="text-slate-600">
-                  Sensors can be applied to specific research equipment to reveal actual energy consumption patterns,
-                  helping facilities allocate costs accurately to grants and projects while identifying inefficient
-                  equipment.
+                  Experiments and equipment change frequently, making fixed monitoring solutions a poor fit.
                 </p>
               </CardContent>
             </Card>
@@ -72,12 +76,11 @@ export default function RDFacilitiesPage() {
             <Card className="border-none shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Thermometer className="h-6 w-6 text-coral-600" />
+                  <ClipboardCheck className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Environmental Parameter Optimization</h3>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Compliance Pressures</h3>
                 <p className="text-slate-600">
-                  Wattif's analytics can reveal previously unseen relationships between environmental conditions and
-                  energy use, helping maintain critical research parameters while identifying efficiency opportunities.
+                  Strict standards require continuous, reliable data for audits and reporting.
                 </p>
               </CardContent>
             </Card>
@@ -85,177 +88,132 @@ export default function RDFacilitiesPage() {
             <Card className="border-none shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Calculator className="h-6 w-6 text-coral-600" />
+                  <Microscope className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Grant Compliance Documentation</h3>
-                <p className="text-slate-600">
-                  The detailed energy data helps document energy use for grant reporting requirements and sustainability
-                  initiatives, providing accurate allocation of overhead costs.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Shield className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Non-Disruptive Installation</h3>
-                <p className="text-slate-600">
-                  Wattif's self-powered sensors can be installed without interrupting critical research activities or
-                  requiring system shutdowns—preserving both research continuity and safety protocols.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <FlaskRound className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Custom Monitoring Parameters</h3>
-                <p className="text-slate-600">
-                  The flexibility of Wattif's system allows for monitoring specialized equipment and setting custom
-                  parameters relevant to research environments rather than generic commercial building metrics.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <CheckCircle2 className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Equipment Performance Monitoring</h3>
-                <p className="text-slate-600">
-                  Beyond energy savings, Wattif can help identify when specialized equipment may be performing
-                  sub-optimally, potentially protecting valuable research by flagging issues before they affect
-                  experiments or samples.
-                </p>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Maintenance Disruptions</h3>
+                <p className="text-slate-600">Battery changes and wiring work interrupt research and risk data gaps.</p>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16">
+      {/* Solution Section */}
+      <section className="bg-gradient-to-b from-white to-slate-50 py-16">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-8 text-center text-3xl font-bold text-slate-900">Key R&D Facility Challenges</h2>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Cog className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Specialized Equipment with Variable Usage</h3>
-                <p className="text-slate-600">
-                  R&D facilities house expensive, energy-intensive equipment (labs, clean rooms, testing chambers) with
-                  highly variable usage patterns that don't follow predictable schedules, making traditional energy
-                  management approaches ineffective.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Thermometer className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Critical Environmental Requirements</h3>
-                <p className="text-slate-600">
-                  Many R&D processes require precise environmental conditions (temperature, humidity, air quality) that
-                  cannot be compromised for energy savings, creating a constant balancing act between research integrity
-                  and efficiency.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Calculator className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Complex Energy Allocation</h3>
-                <p className="text-slate-600">
-                  With multiple research projects and departments sharing facilities, accurately allocating energy costs
-                  between different projects, grants, and budgets is extremely difficult without granular visibility.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Shield className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Laboratory Safety Constraints</h3>
-                <p className="text-slate-600">
-                  Safety protocols in labs often prohibit interruptions to power or environmental systems, limiting
-                  options for traditional energy monitoring installations that might require system shutdowns.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <CardContent className="p-6">
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <FlaskRound className="h-6 w-6 text-coral-600" />
-                </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Specialized Infrastructure</h3>
-                <p className="text-slate-600">
-                  R&D facilities often include unique infrastructure like fume hoods, clean rooms, and specialized
-                  equipment with proprietary control systems that standard building management systems don't adequately
-                  monitor.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-slate-900">
+              Our Solution: Wireless, Batteryless Energy Intelligence
+            </h2>
+            <p className="mb-4 text-lg text-slate-600">Our sensors are designed for the frontiers of science.</p>
+            <p className="mb-8 text-lg font-semibold text-coral-600">
+              Install them in any lab, cleanroom, or test environment—no wires, no batteries, no disruption.
+            </p>
+            <p className="text-lg text-slate-600">
+              Monitor environmental conditions, equipment health, and energy use with unmatched granularity and
+              reliability.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Success Story section temporarily hidden
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-4xl">
-            <h2 className="mb-8 text-center text-3xl font-bold text-slate-900">Success Story</h2>
-            <div className="rounded-lg bg-slate-50 p-8 shadow-md">
-              <h3 className="mb-4 text-xl font-medium text-slate-900">University Research Complex</h3>
-              <p className="mb-4 text-slate-600">
-                A major university research complex was struggling with high energy costs and difficulty allocating
-                expenses across multiple grant-funded projects. Their specialized equipment and 24/7 operations made
-                traditional energy management approaches ineffective.
-              </p>
-              <p className="mb-4 text-slate-600">
-                After implementing Wattif's monitoring solution, they identified that 32% of their energy was being
-                consumed by cooling systems running at full capacity even when labs were unoccupied. By implementing
-                targeted adjustments that maintained critical environmental parameters while reducing unnecessary
-                cooling, they reduced energy consumption by 21%.
-              </p>
-              <p className="text-slate-600">
-                The project delivered annual savings of $285,000 with an ROI of 240% in the first year, while also
-                providing the granular data needed for accurate grant reporting and identifying equipment that was
-                beginning to fail before it affected research results.
-              </p>
-              <div className="mt-6 flex justify-center">
-                <Button asChild className="bg-coral-500 hover:bg-coral-600">
-                  <Link href="/case-studies/university-research">
-                    Read Full Case Study <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
+          <div className="mt-16 grid gap-8 md:grid-cols-2">
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-coral-500 to-coral-300 opacity-30 blur-lg"></div>
+              <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-8 shadow-lg">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900">How We Solve It</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
+                    <div>
+                      <h4 className="font-bold text-slate-900">Discreet, Non-Invasive Deployment</h4>
+                      <p className="text-slate-600">
+                        Place sensors wherever you need data, even in sensitive or hard-to-access locations.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
+                    <div>
+                      <h4 className="font-bold text-slate-900">Flexible, Adaptable Monitoring</h4>
+                      <p className="text-slate-600">Move or repurpose sensors instantly as your research evolves.</p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
+                    <div>
+                      <h4 className="font-bold text-slate-900">Continuous, Reliable Data</h4>
+                      <p className="text-slate-600">
+                        Support compliance and research integrity with maintenance-free, always-on monitoring.
+                      </p>
+                    </div>
+                  </li>
+                  <li className="flex items-start">
+                    <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
+                    <div>
+                      <h4 className="font-bold text-slate-900">Sustainability Built-In</h4>
+                      <p className="text-slate-600">
+                        Eliminate battery waste and support your organization's green goals.
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-coral-300 to-coral-500 opacity-30 blur-lg"></div>
+              <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-8 shadow-lg">
+                <h3 className="mb-6 text-2xl font-bold text-slate-900">The Results</h3>
+                <ul className="space-y-6">
+                  <li className="flex items-center">
+                    <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
+                      <ClipboardCheck className="h-6 w-6 text-coral-600" />
+                    </div>
+                    <p className="text-lg font-medium text-slate-900">
+                      <span className="text-coral-600">Uninterrupted research and compliance</span> with zero
+                      maintenance downtime.
+                    </p>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
+                      <Lightbulb className="h-6 w-6 text-coral-600" />
+                    </div>
+                    <p className="text-lg font-medium text-slate-900">
+                      <span className="text-coral-600">Flexible, future-proof monitoring</span> for every experiment and
+                      facility change.
+                    </p>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
+                      <Flask className="h-6 w-6 text-coral-600" />
+                    </div>
+                    <p className="text-lg font-medium text-slate-900">
+                      <span className="text-coral-600">Granular insights</span> that protect valuable research and
+                      equipment.
+                    </p>
+                  </li>
+                  <li className="flex items-center">
+                    <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
+                      <Microscope className="h-6 w-6 text-coral-600" />
+                    </div>
+                    <p className="text-lg font-medium text-slate-900">
+                      <span className="text-coral-600">A greener, smarter innovation environment</span> ready for what's
+                      next.
+                    </p>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
-      */}
 
+      {/* CTA Section */}
       <section className="bg-gradient-to-b from-slate-900 to-slate-800 py-16 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold">Ready to Optimize Your R&D Facility?</h2>
+            <h2 className="mb-6 text-3xl font-bold">Ready to empower your next breakthrough?</h2>
             <p className="mb-8 text-lg text-slate-300">
-              Discover how Wattif can help you improve energy efficiency without compromising research integrity or
-              safety protocols.
+              See how our wireless, batteryless sensors can support your R&D journey.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="bg-coral-500 hover:bg-coral-600">

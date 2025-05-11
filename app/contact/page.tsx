@@ -3,7 +3,7 @@
 import type React from "react"
 
 import { useState } from "react"
-import { Mail, MapPin, Phone } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -122,14 +122,12 @@ export default function ContactPage() {
                       <SelectValue placeholder="Select your industry" />
                     </SelectTrigger>
                     <SelectContent>
-                      <SelectItem value="manufacturing">Manufacturing</SelectItem>
                       <SelectItem value="commercial-real-estate">Commercial Real Estate</SelectItem>
                       <SelectItem value="data-centers">Data Centers</SelectItem>
-                      <SelectItem value="higher-education">Higher Education</SelectItem>
-                      <SelectItem value="retail">Multi-Site Retail</SelectItem>
-                      <SelectItem value="healthcare">Healthcare</SelectItem>
-                      <SelectItem value="hospitality">Hospitality</SelectItem>
-                      <SelectItem value="logistics">Logistics & Warehousing</SelectItem>
+                      <SelectItem value="construction-sites">Construction Sites</SelectItem>
+                      <SelectItem value="industrial-plants">Industrial Plants</SelectItem>
+                      <SelectItem value="logistics-facilities">Logistics Facilities</SelectItem>
+                      <SelectItem value="r-and-d-facilities">R&D Facilities</SelectItem>
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
@@ -196,11 +194,13 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-medium">Headquarters</h3>
                       <address className="not-italic text-slate-600">
-                        Wattif Technologies GmbH
+                        Wattif Technologies Pte. Ltd.
                         <br />
-                        Rosenthaler Str. 40
+                        68 CIRCULAR ROAD
                         <br />
-                        10178 Berlin, Germany
+                        #02-01
+                        <br />
+                        SINGAPORE (049422)
                       </address>
                     </div>
                   </CardContent>
@@ -214,20 +214,6 @@ export default function ContactPage() {
                       <p className="text-slate-600">
                         <a href="mailto:info@wattif.io" className="hover:text-coral-600">
                           info@wattif.io
-                        </a>
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardContent className="flex items-start gap-4 p-6">
-                    <Phone className="mt-1 h-5 w-5 text-coral-500" />
-                    <div>
-                      <h3 className="font-medium">Phone</h3>
-                      <p className="text-slate-600">
-                        <a href="tel:+4930555783000" className="hover:text-coral-600">
-                          +49 30 555 78300
                         </a>
                       </p>
                     </div>
@@ -269,13 +255,6 @@ export default function ContactPage() {
                 <p className="text-slate-600">
                   Most clients identify their first energy-saving opportunities within the first week of monitoring,
                   with more comprehensive insights developing over the first month.
-                </p>
-              </div>
-              <div>
-                <h3 className="mb-2 text-lg font-medium text-slate-900">Can Wattif integrate with my existing BMS?</h3>
-                <p className="text-slate-600">
-                  Yes. Wattif is designed to complement your existing building management systems, providing more
-                  granular data that can enhance your current capabilities.
                 </p>
               </div>
             </div>

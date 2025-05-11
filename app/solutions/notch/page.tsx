@@ -48,7 +48,7 @@ export default function NotchPage() {
                   variant="outline"
                   className="border-slate-300 text-slate-700 hover:bg-slate-100"
                 >
-                  <a href="https://www.buildwithnotch.com/contact" target="_blank" rel="noopener noreferrer">
+                  <a href="https://www.buildwithnotch.com/get-in-touch" target="_blank" rel="noopener noreferrer">
                     Contact Notch Team
                   </a>
                 </Button>

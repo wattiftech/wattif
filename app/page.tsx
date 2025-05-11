@@ -1,6 +1,8 @@
 "use client"
 
-import { ReactNode, useState } from "react"
+import type React from "react"
+
+import { useState } from "react"
 import {
   ArrowDown,
   ArrowRight,
@@ -11,15 +13,13 @@ import {
   ClipboardCheck,
   Cpu,
   Eye,
-  GraduationCap,
+  HardHat,
   Lightbulb,
   LineChart,
   Microscope,
   Server,
   ShoppingBag,
   Zap,
-  Wrench,
-  Users,
   Building,
   FlaskConical,
   Gauge,
@@ -28,10 +28,11 @@ import {
   PieChart,
   AreaChart,
   CircuitBoard,
+  Wrench,
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 import { HowItWorks } from "@/components/how-it-works"
 import { IndustryCard } from "@/components/industry-card"
 import { Navbar } from "@/components/navbar"
@@ -39,26 +40,28 @@ import Link from "next/link"
 import Image from "next/image"
 import { Footer } from "@/components/footer"
 
-type CategoryCardProps = {
-  icon: ReactNode;
-  title: string;
-  description: string;
+// Define proper types for the CategoryCard component
+interface CategoryCardProps {
+  icon: React.ReactNode
+  title: string
+  description: string
 }
 
-const CategoryCard = ({ icon, title, description }: CategoryCardProps) => (
-  <Card className="border-none shadow-lg transition-all duration-300 hover:shadow-xl h-full">
-    <CardHeader className="pb-2">
-      <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-coral-100">{icon}</div>
-      <CardTitle className="text-xl">{title}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <p className="text-slate-600">{description}</p>
-    </CardContent>
-  </Card>
+const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description }) => (
+  <div className="flex flex-col items-center">
+    <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-2 relative overflow-hidden group">
+      {icon}
+      <div className="absolute inset-0 bg-blue-500 bg-opacity-90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <div className="text-white text-xs text-center px-1">{description}</div>
+      </div>
+    </div>
+    <span className="text-xs text-center font-medium text-slate-700">{title}</span>
+  </div>
 )
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState(0)
+  const [selectedIndustry, setSelectedIndustry] = useState(0)
 
   // Tab data
   const tabs = [
@@ -91,6 +94,34 @@ export default function Home() {
       ),
     },
     {
+      name: "Industrial Plants",
+      icon: <Wrench className="h-5 w-5 mr-2" />,
+      content: (
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <CategoryCard
+            icon={<Gauge className="h-5 w-5 text-coral-600" />}
+            title="Patterns hiding in plain sight"
+            description="Critical equipment operating outside optimal parameters, increasing failure risk and energy waste."
+          />
+          <CategoryCard
+            icon={<PieChart className="h-5 w-5 text-coral-600" />}
+            title="Data without context"
+            description="Production metrics disconnected from energy consumption patterns and equipment health."
+          />
+          <CategoryCard
+            icon={<Workflow className="h-5 w-5 text-coral-600" />}
+            title="Insights trapped in complexity"
+            description="Operational data siloed across multiple systems with no unified view."
+          />
+          <CategoryCard
+            icon={<CircuitBoard className="h-5 w-5 text-coral-600" />}
+            title="The Wattif difference"
+            description="Preventing costly downtime by identifying equipment issues before they cause failures."
+          />
+        </div>
+      ),
+    },
+    {
       name: "Data Centers",
       icon: <Server className="h-5 w-5 mr-2" />,
       content: (
@@ -114,6 +145,62 @@ export default function Home() {
             icon={<CircuitBoard className="h-5 w-5 text-coral-600" />}
             title="The Wattif difference"
             description="Providing early warning of conditions that threaten uptime and computational efficiency."
+          />
+        </div>
+      ),
+    },
+    {
+      name: "Construction Sites",
+      icon: <HardHat className="h-5 w-5 mr-2" />,
+      content: (
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <CategoryCard
+            icon={<LineChart className="h-5 w-5 text-coral-600" />}
+            title="Patterns hiding in plain sight"
+            description="Temporary power systems running inefficiently, increasing project costs and carbon footprint."
+          />
+          <CategoryCard
+            icon={<BarChart3 className="h-5 w-5 text-coral-600" />}
+            title="Data without context"
+            description="Energy usage disconnected from project phases and equipment utilization."
+          />
+          <CategoryCard
+            icon={<Server className="h-5 w-5 text-coral-600" />}
+            title="Insights trapped in complexity"
+            description="Site conditions changing daily with no adaptive monitoring solution."
+          />
+          <CategoryCard
+            icon={<Lightbulb className="h-5 w-5 text-coral-600" />}
+            title="The Wattif difference"
+            description="Flexible monitoring that moves with your project phases and reduces diesel generator waste."
+          />
+        </div>
+      ),
+    },
+    {
+      name: "Logistics Facilities",
+      icon: <ShoppingBag className="h-5 w-5 mr-2" />,
+      content: (
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <CategoryCard
+            icon={<Gauge className="h-5 w-5 text-coral-600" />}
+            title="Patterns hiding in plain sight"
+            description="Cold storage and material handling equipment operating inefficiently across vast spaces."
+          />
+          <CategoryCard
+            icon={<PieChart className="h-5 w-5 text-coral-600" />}
+            title="Data without context"
+            description="Energy consumption disconnected from throughput metrics and operational schedules."
+          />
+          <CategoryCard
+            icon={<Workflow className="h-5 w-5 text-coral-600" />}
+            title="Insights trapped in complexity"
+            description="Multiple facility systems with no unified energy intelligence platform."
+          />
+          <CategoryCard
+            icon={<CircuitBoard className="h-5 w-5 text-coral-600" />}
+            title="The Wattif difference"
+            description="Scaling energy monitoring across your entire logistics network without complex infrastructure."
           />
         </div>
       ),
@@ -198,9 +285,9 @@ export default function Home() {
                 </div>
 
                 <h1 className="mb-4 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-                  Stop Losing Money to Hidden Energy{" "}
+                  Energy Intelligence{" "}
                   <span className="bg-gradient-to-r from-coral-500 to-coral-400 bg-clip-text text-transparent">
-                    Waste
+                    Tailored to Your Challenges
                   </span>
                 </h1>
               </div>
@@ -304,104 +391,6 @@ export default function Home() {
 
         {/* Bottom fade */}
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
-      </section>
-
-      {/* Problem Statement Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(#f9fafb_1px,transparent_1px)] [background-size:20px_20px] opacity-50"></div>
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -right-[20%] top-[20%] w-[40%] h-[40%] bg-coral-50 rounded-full opacity-20 blur-[120px]"></div>
-          <div className="absolute -left-[10%] bottom-[10%] w-[30%] h-[30%] bg-blue-50 rounded-full opacity-20 blur-[100px]"></div>
-        </div>
-
-        <div className="container relative mx-auto px-4 md:px-6 z-10">
-          <h2 className="mb-16 text-center text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            <span className="relative inline-block">
-              Bridging the Energy Visibility Gap
-              <div className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-coral-400 to-transparent"></div>
-            </span>
-          </h2>
-
-          <div className="grid gap-10 md:grid-cols-3">
-            <div className="group relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral-300 to-coral-500 rounded-t-2xl"></div>
-              <div className="mb-6 rounded-full bg-coral-50 p-3 w-12 h-12 flex items-center justify-center group-hover:bg-coral-100 transition-colors duration-300">
-                <Eye className="h-6 w-6 text-coral-600" />
-              </div>
-              <h3 className="mb-3 text-xl font-semibold text-slate-900">Visibility Gap</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Monthly utility bills lack detail, leaving you blind to where energy is actually being wasted within
-                your building. Without granular data, optimization is impossible.
-              </p>
-            </div>
-
-            <div className="group relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1 md:translate-y-6">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral-300 to-coral-500 rounded-t-2xl"></div>
-              <div className="mb-6 rounded-full bg-coral-50 p-3 w-12 h-12 flex items-center justify-center group-hover:bg-coral-100 transition-colors duration-300">
-                <Wrench className="h-6 w-6 text-coral-600" />
-              </div>
-              <h3 className="mb-3 text-xl font-semibold text-slate-900">Implementation Barrier</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Traditional monitoring requires complex installation, wiring, IT projects and ongoing maintenance,
-                making it too disruptive for many buildings.
-              </p>
-            </div>
-
-            <div className="group relative bg-white rounded-2xl p-8 shadow-lg transition-all duration-500 hover:shadow-xl hover:-translate-y-1">
-              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-coral-300 to-coral-500 rounded-t-2xl"></div>
-              <div className="mb-6 rounded-full bg-coral-50 p-3 w-12 h-12 flex items-center justify-center group-hover:bg-coral-100 transition-colors duration-300">
-                <Users className="h-6 w-6 text-coral-600" />
-              </div>
-              <h3 className="mb-3 text-xl font-semibold text-slate-900">Expertise Shortage</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Most buildings lack dedicated energy specialists who can continuously analyze consumption patterns and
-                identify optimization opportunities.
-              </p>
-            </div>
-          </div>
-
-          <div className="relative mt-16 mx-auto max-w-3xl">
-            <div className="absolute inset-0 bg-gradient-to-r from-coral-200/20 to-slate-200/20 rounded-2xl blur-xl"></div>
-            <p className="relative bg-white/80 backdrop-blur-sm p-6 rounded-2xl text-center text-lg text-slate-700 shadow-lg border border-slate-100">
-              Energy waste is everywhere in commercial buildings, but without the right monitoring, it remains
-              invisible—until now.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Problem Statement: The Hidden Story - TABBED INTERFACE */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f9ff40_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff40_1px,transparent_1px)] [background-size:24px_24px] opacity-60"></div>
-        <div className="absolute top-0 right-0 w-[40%] h-[40%] bg-gradient-to-br from-coral-50/20 to-transparent rounded-full opacity-30 blur-[80px]"></div>
-        <div className="container mx-auto px-4 md:px-6">
-          <h2 className="mb-6 text-center text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            The Hidden Story in Your Critical Infrastructure
-          </h2>
-          <p className="mb-10 text-center text-lg text-slate-600 max-w-3xl mx-auto">
-            Most facilities have invisible energy patterns that traditional monitoring misses completely.
-          </p>
-
-          {/* Tab navigation */}
-          <div className="flex flex-wrap justify-center mb-8">
-            {tabs.map((tab, index) => (
-              <button
-                key={index}
-                onClick={() => setActiveTab(index)}
-                className={`flex items-center px-6 py-3 text-sm font-medium rounded-full mx-2 mb-2 transition-all duration-200 ${activeTab === index
-                    ? "bg-gradient-to-r from-coral-500 to-coral-600 text-white shadow-md"
-                    : "bg-white text-slate-700 border border-slate-200 hover:border-coral-300 hover:text-coral-600"
-                  }`}
-              >
-                {tab.icon}
-                {tab.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Tab content with animation */}
-          <div className="tab-content transition-all duration-300 ease-in-out">{tabs[activeTab].content}</div>
-        </div>
       </section>
 
       {/* Product Introduction */}
@@ -640,111 +629,56 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <IndustryCard
               icon={<Building2 className="h-8 w-8" />}
-              title="Commercial Real Estate"
-              description="Transform energy data into property value with tenant-specific tracking and optimization."
+              title="Commercial Buildings"
+              description="Retrofit any building, old or new, with no invasive wiring or ongoing maintenance. Place sensors in hard-to-reach or high-traffic areas for granular monitoring."
               href="/industries/commercial-real-estate"
             />
 
             <IndustryCard
               icon={<Server className="h-8 w-8" />}
               title="Data Centers"
-              description="Balance performance and efficiency with detailed PUE tracking and cooling optimization."
+              description="Achieve rack-level and aisle-level environmental and power monitoring without adding wiring complexity or maintenance burden."
               href="/industries/data-centers"
             />
 
             <IndustryCard
+              icon={<HardHat className="h-8 w-8" />}
+              title="Construction Sites"
+              description="Rapidly deploy and relocate sensors as site layouts change-without worrying about power or connectivity."
+              href="/industries/construction-sites"
+            />
+
+            <IndustryCard
+              icon={<Wrench className="h-8 w-8" />}
+              title="Industrial Facilities"
+              description="Deploy sensors anywhere on the factory floor, production lines, or inside machinery-without wiring or battery changes."
+              href="/industries/industrial-plants"
+            />
+
+            <IndustryCard
               icon={<ShoppingBag className="h-8 w-8" />}
-              title="Multi-Site Retail"
-              description="Ensure consistent energy performance across every location in your chain."
-              href="/industries/multi-site-retail"
-            />
-
-            <IndustryCard
-              icon={<Building2 className="h-8 w-8" />}
-              title="Hotels"
-              description="Optimize guest comfort while reducing energy costs across your property."
-              href="/industries/hotels"
-            />
-
-            <IndustryCard
-              icon={<GraduationCap className="h-8 w-8" />}
-              title="Educational Buildings"
-              description="Create sustainable campuses with smart energy monitoring and management."
-              href="/industries/education"
+              title="Logistics Facilities"
+              description="Place sensors throughout vast warehouses, loading docks, and cold storage areas with zero wiring or battery logistics."
+              href="/industries/logistics-warehouses"
             />
 
             <IndustryCard
               icon={<Microscope className="h-8 w-8" />}
-              title="R&D Facilities"
-              description="Optimize energy efficiency without compromising research integrity or safety protocols in specialized laboratory environments."
+              title="R&D"
+              description="Install sensors in sensitive labs, cleanrooms, and test environments without disrupting operations or introducing maintenance cycles."
               href="/industries/battery-storage"
             />
-          </div>
-
-          {/* Bottom illustration */}
-          <div className="mt-16 relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-coral-50/20 via-transparent to-blue-50/20 rounded-xl"></div>
-            <div className="relative mx-auto max-w-4xl p-8 flex items-center justify-center">
-              <div className="grid grid-cols-5 gap-4 w-full">
-                {/* Building icons */}
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-2 relative overflow-hidden group">
-                    <Building2 className="h-8 w-8 text-coral-500 group-hover:scale-110 transition-transform" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                  </div>
-                  <div className="h-20 w-1 border-dashed border-l-2 border-coral-200 mx-auto"></div>
-                </div>
-
-                <div className="flex flex-col items-center mt-12">
-                  <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-2 relative overflow-hidden group">
-                    <Server className="h-8 w-8 text-coral-500 group-hover:scale-110 transition-transform" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                  </div>
-                  <div className="h-12 w-1 border-dashed border-l-2 border-coral-200 mx-auto"></div>
-                </div>
-
-                <div className="flex flex-col items-center">
-                  <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-2 relative overflow-hidden group">
-                    <ShoppingBag className="h-8 w-8 text-coral-500 group-hover:scale-110 transition-transform" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                  </div>
-                  <div className="h-24 w-1 border-dashed border-l-2 border-coral-200 mx-auto"></div>
-                </div>
-
-                <div className="flex flex-col items-center mt-8">
-                  <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-2 relative overflow-hidden group">
-                    <GraduationCap className="h-8 w-8 text-coral-500 group-hover:scale-110 transition-transform" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                  </div>
-                  <div className="h-16 w-1 border-dashed border-l-2 border-coral-200 mx-auto"></div>
-                </div>
-
-                <div className="flex flex-col items-center mt-4">
-                  <div className="w-16 h-16 bg-white rounded-xl shadow-md flex items-center justify-center mb-2 relative overflow-hidden group">
-                    <Microscope className="h-8 w-8 text-coral-500 group-hover:scale-110 transition-transform" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-                  </div>
-                  <div className="h-20 w-1 border-dashed border-l-2 border-coral-200 mx-auto"></div>
-                </div>
-
-                {/* Central hub */}
-                <div className="col-span-5 flex justify-center">
-                  <div className="w-24 h-24 bg-gradient-to-br from-coral-500 to-coral-600 rounded-full shadow-lg flex items-center justify-center relative">
-                    <div className="absolute inset-0 rounded-full bg-coral-500 animate-ping opacity-20"></div>
-                    <Zap className="h-12 w-12 text-white" />
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
 
           <Card className="flex flex-col items-center justify-center border-dashed border-slate-300 bg-slate-50 p-6 text-center">
             <CardContent className="pb-6 pt-6">
               <h3 className="mb-2 text-xl font-medium">Don't see your industry?</h3>
               <p className="mb-4 text-slate-600">Our solutions adapt to any environment where energy is consumed.</p>
-              <Button variant="outline" className="mt-2">
-                Contact Us
-                <ChevronRight className="ml-1 h-4 w-4" />
+              <Button asChild variant="outline" className="mt-2">
+                <Link href="/contact">
+                  Contact Us
+                  <ChevronRight className="ml-1 h-4 w-4" />
+                </Link>
               </Button>
             </CardContent>
           </Card>
@@ -775,7 +709,7 @@ export default function Home() {
             {/* Connecting line in the background */}
             <div className="absolute top-[30%] left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-coral-500/20 to-transparent hidden md:block"></div>
 
-            {/* Solution 1 - Wattif Elements (moved from second position) */}
+            {/* Solution 1 - Wattif Elements */}
             <div className="group relative">
               {/* Glass card */}
               <div className="absolute inset-0 bg-white/5 rounded-3xl backdrop-blur-sm border border-white/10 shadow-2xl"></div>
@@ -791,55 +725,195 @@ export default function Home() {
 
                 <div className="mb-8 flex-grow">
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <button className="px-3 py-1 text-sm rounded-full bg-coral-500/20 text-coral-400 hover:bg-coral-500/30 transition-colors">
-                      Hotels
+                    <button
+                      onClick={() => setSelectedIndustry(0)}
+                      className={`px-3 py-1 text-sm rounded-full ${selectedIndustry === 0 ? "bg-coral-500/20 text-coral-400" : "bg-white/10 text-slate-300"} hover:bg-coral-500/30 transition-colors`}
+                    >
+                      Commercial Buildings
                     </button>
-                    <button className="px-3 py-1 text-sm rounded-full bg-white/10 text-slate-300 hover:bg-white/20 transition-colors">
-                      Educational
+                    <button
+                      onClick={() => setSelectedIndustry(1)}
+                      className={`px-3 py-1 text-sm rounded-full ${selectedIndustry === 1 ? "bg-coral-500/20 text-coral-400" : "bg-white/10 text-slate-300"} hover:bg-coral-500/30 transition-colors`}
+                    >
+                      Industrial Plants
                     </button>
-                    <button className="px-3 py-1 text-sm rounded-full bg-white/10 text-slate-300 hover:bg-white/20 transition-colors">
-                      Commercial
-                    </button>
-                    <button className="px-3 py-1 text-sm rounded-full bg-white/10 text-slate-300 hover:bg-white/20 transition-colors">
+                    <button
+                      onClick={() => setSelectedIndustry(2)}
+                      className={`px-3 py-1 text-sm rounded-full ${selectedIndustry === 2 ? "bg-coral-500/20 text-coral-400" : "bg-white/10 text-slate-300"} hover:bg-coral-500/30 transition-colors`}
+                    >
                       Data Centers
                     </button>
-                    <button className="px-3 py-1 text-sm rounded-full bg-white/10 text-slate-300 hover:bg-white/20 transition-colors">
-                      Retail
+                    <button
+                      onClick={() => setSelectedIndustry(3)}
+                      className={`px-3 py-1 text-sm rounded-full ${selectedIndustry === 3 ? "bg-coral-500/20 text-coral-400" : "bg-white/10 text-slate-300"} hover:bg-coral-500/30 transition-colors`}
+                    >
+                      Construction Sites
                     </button>
-                    <button className="px-3 py-1 text-sm rounded-full bg-white/10 text-slate-300 hover:bg-white/20 transition-colors">
-                      R&D
+                    <button
+                      onClick={() => setSelectedIndustry(4)}
+                      className={`px-3 py-1 text-sm rounded-full ${selectedIndustry === 4 ? "bg-coral-500/20 text-coral-400" : "bg-white/10 text-slate-300"} hover:bg-coral-500/30 transition-colors`}
+                    >
+                      Logistics Facilities
+                    </button>
+                    <button
+                      onClick={() => setSelectedIndustry(5)}
+                      className={`px-3 py-1 text-sm rounded-full ${selectedIndustry === 5 ? "bg-coral-500/20 text-coral-400" : "bg-white/10 text-slate-300"} hover:bg-coral-500/30 transition-colors`}
+                    >
+                      R&D Facilities
                     </button>
                   </div>
 
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
-                        <ChevronRight className="h-4 w-4 text-coral-400" />
-                      </div>
-                      <span className="text-slate-300">After-Hours Energy Waste Detection</span>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
-                        <ChevronRight className="h-4 w-4 text-coral-400" />
-                      </div>
-                      <span className="text-slate-300">Guest Room Energy Optimization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
-                        <ChevronRight className="h-4 w-4 text-coral-400" />
-                      </div>
-                      <span className="text-slate-300">Kitchen and Laundry Efficiency</span>
-                    </li>
-                  </ul>
+                  {selectedIndustry === 0 && (
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">After-Hours Energy Waste Detection</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Tenant Comfort Optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Common Area Energy Management</span>
+                      </li>
+                    </ul>
+                  )}
+
+                  {selectedIndustry === 1 && (
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Production Line Optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Equipment Failure Prevention</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Peak Demand Management</span>
+                      </li>
+                    </ul>
+                  )}
+
+                  {selectedIndustry === 2 && (
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Cooling Efficiency Optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Server Load Balancing</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">PUE Improvement Strategies</span>
+                      </li>
+                    </ul>
+                  )}
+
+                  {selectedIndustry === 3 && (
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Generator Efficiency Monitoring</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Temporary Power Management</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Equipment Utilization Tracking</span>
+                      </li>
+                    </ul>
+                  )}
+
+                  {selectedIndustry === 4 && (
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Cold Storage Optimization</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Loading Dock Energy Management</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Material Handling Equipment Efficiency</span>
+                      </li>
+                    </ul>
+                  )}
+
+                  {selectedIndustry === 5 && (
+                    <ul className="space-y-3">
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Lab Equipment Power Quality</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Cleanroom Environment Control</span>
+                      </li>
+                      <li className="flex items-start">
+                        <div className="mr-3 h-6 w-6 flex-shrink-0 rounded-full bg-coral-500/20 flex items-center justify-center">
+                          <ChevronRight className="h-4 w-4 text-coral-400" />
+                        </div>
+                        <span className="text-slate-300">Sensitive Instrument Protection</span>
+                      </li>
+                    </ul>
+                  )}
                 </div>
 
                 <div className="relative">
-                  <Button className="w-full py-6 bg-gradient-to-r from-coral-500 to-coral-600 hover:opacity-90 rounded-xl group overflow-hidden">
-                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center justify-center">
-                      Start Optimizing Your Building
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                  <Button
+                    asChild
+                    className="w-full py-6 bg-gradient-to-r from-coral-500 to-coral-600 hover:opacity-90 rounded-xl group overflow-hidden"
+                  >
+                    <Link href="/contact">
+                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center justify-center">
+                        Start Optimizing Your Building
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -891,12 +965,17 @@ export default function Home() {
                 </div>
 
                 <div className="relative">
-                  <Button className="w-full py-6 bg-gradient-to-r from-coral-500 to-coral-600 hover:opacity-90 rounded-xl group overflow-hidden">
-                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center justify-center">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                  <Button
+                    asChild
+                    className="w-full py-6 bg-gradient-to-r from-coral-500 to-coral-600 hover:opacity-90 rounded-xl group overflow-hidden"
+                  >
+                    <Link href="/contact">
+                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center justify-center">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -943,12 +1022,17 @@ export default function Home() {
                 </div>
 
                 <div className="relative">
-                  <Button className="w-full py-6 bg-gradient-to-r from-coral-500 to-coral-600 hover:opacity-90 rounded-xl group overflow-hidden">
-                    <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <span className="relative z-10 flex items-center justify-center">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </span>
+                  <Button
+                    asChild
+                    className="w-full py-6 bg-gradient-to-r from-coral-500 to-coral-600 hover:opacity-90 rounded-xl group overflow-hidden"
+                  >
+                    <Link href="/contact">
+                      <div className="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <span className="relative z-10 flex items-center justify-center">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </span>
+                    </Link>
                   </Button>
                 </div>
               </div>

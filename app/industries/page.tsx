@@ -1,138 +1,76 @@
-import {
-  ArrowRight,
-  Battery,
-  Building2,
-  GraduationCap,
-  HospitalIcon as HospitalSquare,
-  Hotel,
-  Server,
-  ShoppingBag,
-  Warehouse,
-} from "lucide-react"
 import Link from "next/link"
+import { Building2, Database, Factory, HardHat, Microscope, Warehouse } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
-import { Footer } from "@/components/footer"
-import { Navbar } from "@/components/navbar"
 import { PageHeader } from "@/components/page-header"
+import { IndustryCard } from "@/components/industry-card"
 
 export default function IndustriesPage() {
-  const industries = [
-    {
-      icon: <Hotel className="h-8 w-8" />,
-      title: "Hotels",
-      description:
-        "Balance guest comfort with energy efficiency. Optimize HVAC, lighting, and amenities without compromising the guest experience.",
-      link: "/industries/hotels",
-    },
-    {
-      icon: <Building2 className="h-8 w-8" />,
-      title: "Commercial Real Estate",
-      description:
-        "Transform energy data into property value with tenant-specific tracking and optimization for improved NOI.",
-      link: "/industries/commercial-real-estate",
-    },
-    {
-      icon: <Server className="h-8 w-8" />,
-      title: "Data Centers",
-      description:
-        "Balance performance and efficiency with detailed PUE tracking and cooling optimization without compromising reliability.",
-      link: "/industries/data-centers",
-    },
-    {
-      icon: <ShoppingBag className="h-8 w-8" />,
-      title: "Multi-Site Retail",
-      description:
-        "Ensure consistent energy performance across every location in your chain and identify outliers quickly.",
-      link: "/industries/multi-site-retail",
-    },
-    {
-      icon: <Battery className="h-8 w-8" />,
-      title: "Battery Storage Facilities",
-      description:
-        "Optimize charging efficiency, extend battery life, and enhance safety with comprehensive monitoring of thermal and performance metrics.",
-      link: "/industries/battery-storage",
-    },
-    {
-      icon: <HospitalSquare className="h-8 w-8" />,
-      title: "Healthcare",
-      description:
-        "Monitor critical systems while optimizing energy use in non-critical areas to balance patient care and efficiency.",
-      link: "/industries/healthcare",
-    },
-    {
-      icon: <Warehouse className="h-8 w-8" />,
-      title: "Logistics & Warehousing",
-      description:
-        "Optimize energy use in large spaces with variable occupancy and specialized equipment like refrigeration and material handling.",
-      link: "/industries/logistics-warehousing",
-    },
-    {
-      icon: <GraduationCap className="h-8 w-8" />,
-      title: "Educational Buildings",
-      description:
-        "Monitor energy use across diverse campus facilities. Align consumption with actual space utilization based on class schedules and events.",
-      link: "/industries/educational-buildings",
-    },
-  ]
-
   return (
-    <div className="flex min-h-screen flex-col">
-      <Navbar />
-
+    <main className="flex flex-col min-h-screen">
       <PageHeader
-        title="Industry Solutions"
-        description="Tailored energy intelligence for every industry's unique challenges"
+        title="Industry-Specific Energy Solutions"
+        description="Tailored energy intelligence for your unique operational challenges"
       />
 
-      <section className="bg-white py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {industries.map((industry, index) => (
-              <Card key={index} className="flex h-full flex-col transition-all duration-300 hover:shadow-lg">
-                <CardHeader className="pb-2">
-                  <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-teal-100 text-teal-600">
-                    {industry.icon}
-                  </div>
-                  <h3 className="text-xl font-medium">{industry.title}</h3>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-slate-600">{industry.description}</p>
-                </CardContent>
-                <CardFooter>
-                  <Link
-                    href={industry.link}
-                    className="flex items-center text-sm font-medium text-teal-600 hover:text-teal-700"
-                  >
-                    Learn more
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardFooter>
-              </Card>
-            ))}
-          </div>
+      <section className="container mx-auto px-4 py-12 md:py-16">
+        <h2 className="text-3xl font-bold mb-12 text-center text-slate-900">Tailored Energy Intelligence</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <IndustryCard
+            title="Commercial Real Estate"
+            description="Optimize energy usage across your entire property portfolio with solutions designed for multi-tenant buildings."
+            icon={<Building2 className="h-10 w-10 text-coral-500" />}
+            href="/industries/commercial-real-estate"
+          />
+          <IndustryCard
+            title="Manufacturing Plants"
+            description="Align energy use with production demands and identify high-cost systems to reduce waste while maintaining output."
+            icon={<Factory className="h-10 w-10 text-coral-500" />}
+            href="/industries/manufacturing-plants"
+          />
+          <IndustryCard
+            title="Data Centers"
+            description="Maintain critical operations while optimizing energy consumption in high-demand computing environments."
+            icon={<Database className="h-10 w-10 text-coral-500" />}
+            href="/industries/data-centers"
+          />
+          <IndustryCard
+            title="Construction Sites"
+            description="Track energy use across generators, equipment, and project zones to optimize costs and meet sustainability goals."
+            icon={<HardHat className="h-10 w-10 text-coral-500" />}
+            href="/industries/construction-sites"
+          />
+          <IndustryCard
+            title="Logistics Facilities"
+            description="Standardize energy performance across warehouses and distribution centers while adapting to local conditions."
+            icon={<Warehouse className="h-10 w-10 text-coral-500" />}
+            href="/industries/logistics-facilities"
+          />
+          <IndustryCard
+            title="R&D Facilities"
+            description="Support precise environmental controls while identifying opportunities for energy optimization."
+            icon={<Microscope className="h-10 w-10 text-coral-500" />}
+            href="/industries/r-and-d-facilities"
+          />
         </div>
       </section>
 
       <section className="bg-slate-50 py-16">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight text-slate-900">Don't See Your Industry?</h2>
-            <p className="mb-8 text-lg text-slate-600">
-              Our energy monitoring solutions can be adapted to any environment where energy is consumed. Contact us to
-              discuss your specific industry challenges and how Wattif can help you achieve energy clarity.
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold mb-6 text-slate-900">Don't See Your Industry?</h2>
+            <p className="text-lg text-slate-700 mb-8">
+              Our energy intelligence platform is adaptable to virtually any built environment. Contact our team to
+              discuss your specific industry challenges.
             </p>
-            <Button asChild size="lg" className="bg-teal-500 hover:bg-teal-600">
-              <Link href="/contact">
-                Contact Our Team <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-md bg-coral-500 px-8 py-3 text-lg font-medium text-white shadow transition-colors hover:bg-coral-600 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-coral-500"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>
-
-      <Footer />
-    </div>
+    </main>
   )
 }

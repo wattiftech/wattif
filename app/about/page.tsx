@@ -120,9 +120,16 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-slate-900">Dharani Malladi</h3>
                 <p className="text-coral-600 font-medium">Founder and CEO</p>
                 <div className="mt-4 flex">
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-500 hover:text-coral-600">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-slate-500 hover:text-coral-600"
+                    asChild
+                  >
+                    <a href="https://www.linkedin.com/in/dmalladi/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
                   </Button>
                 </div>
               </CardContent>
@@ -140,9 +147,16 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-slate-900">Aish Prasad</h3>
                 <p className="text-coral-600 font-medium">Director of Client Impact</p>
                 <div className="mt-4 flex">
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-500 hover:text-coral-600">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-slate-500 hover:text-coral-600"
+                    asChild
+                  >
+                    <a href="https://www.linkedin.com/in/aishvarma/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
                   </Button>
                 </div>
               </CardContent>
@@ -160,29 +174,20 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-slate-900">Suresh M, Ph.D</h3>
                 <p className="text-coral-600 font-medium">Electrical Engineering</p>
                 <div className="mt-4 flex">
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-500 hover:text-coral-600">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-none shadow-lg">
-              <div className="h-64 w-full bg-slate-100">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/attachments/gen-images/public/dark-haired-man-headshot-7AUlI3dP3fTxtMANzBL2SMtYeo3D6e.png"
-                  alt="Akhilesh Yadav"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold text-slate-900">Akhilesh Yadav, PhD</h3>
-                <p className="text-coral-600 font-medium">Machine Learning</p>
-                <div className="mt-4 flex">
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-500 hover:text-coral-600">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-slate-500 hover:text-coral-600"
+                    asChild
+                  >
+                    <a
+                      href="https://www.linkedin.com/in/mogilicharla-suresh/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
                   </Button>
                 </div>
               </CardContent>
@@ -200,9 +205,20 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-slate-900">Dr. Balaji Kalluri</h3>
                 <p className="text-coral-600 font-medium">Scientific Advisor, Non-Intrusive Load Monitoring</p>
                 <div className="mt-4 flex">
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-500 hover:text-coral-600">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-slate-500 hover:text-coral-600"
+                    asChild
+                  >
+                    <a
+                      href="https://www.linkedin.com/in/dr-balaji-kalluri-phd-a95a4931/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
                   </Button>
                 </div>
               </CardContent>
@@ -220,9 +236,16 @@ export default function AboutPage() {
                 <h3 className="text-xl font-bold text-slate-900">Venkatesh GR</h3>
                 <p className="text-coral-600 font-medium">Principal IoT Engineer</p>
                 <div className="mt-4 flex">
-                  <Button variant="ghost" size="icon" className="rounded-full text-slate-500 hover:text-coral-600">
-                    <Linkedin className="h-5 w-5" />
-                    <span className="sr-only">LinkedIn</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="rounded-full text-slate-500 hover:text-coral-600"
+                    asChild
+                  >
+                    <a href="https://www.linkedin.com/in/venkateshgr11/" target="_blank" rel="noopener noreferrer">
+                      <Linkedin className="h-5 w-5" />
+                      <span className="sr-only">LinkedIn</span>
+                    </a>
                   </Button>
                 </div>
               </CardContent>

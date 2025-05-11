@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { CheckCircle2, Building2, AlertTriangle, Lightbulb, BarChart3, LineChart } from "lucide-react"
+import { CheckCircle2, Factory, AlertTriangle, Wrench, Gauge, BarChart3 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -8,15 +8,15 @@ import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { PageHeader } from "@/components/page-header"
 
-export default function CommercialRealEstatePage() {
+export default function ManufacturingPlantsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
       <PageHeader
-        title="Smarter Buildings, Effortless Efficiency"
-        description="The Future of Facility Management"
-        icon={<Building2 className="h-12 w-12 text-coral-500" />}
+        title="Powering Manufacturing Excellence"
+        description="Precision Energy Intelligence for Every Production Line"
+        icon={<Factory className="h-12 w-12 text-coral-500" />}
       />
 
       {/* Hero Section */}
@@ -24,26 +24,25 @@ export default function CommercialRealEstatePage() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid gap-12 md:grid-cols-2">
             <div className="flex flex-col justify-center space-y-4">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900">
-                The Commercial Building Energy Challenge
-              </h2>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900">The Manufacturing Energy Challenge</h2>
               <p className="text-lg text-slate-600">
-                Modern offices, shopping centers, and mixed-use complexes are more than just spaces—they're living
-                ecosystems.
+                Manufacturing is the backbone of the global economy, but it is also one of the most energy-intensive
+                sectors. From heavy machinery and assembly lines to compressed air systems and HVAC, energy costs can
+                represent a significant portion of operational expenses.
               </p>
               <p className="text-lg font-semibold text-coral-600">
-                Balancing comfort, energy efficiency, and sustainability is a daily challenge, especially with aging
-                infrastructure and evolving tenant needs.
+                Unplanned downtime, inefficient equipment, and hidden energy waste can severely impact profitability and
+                competitiveness.
               </p>
               <p className="text-lg text-slate-600">
-                Traditional energy management solutions are disruptive to install, costly to maintain, and often can't
-                keep up with changing layouts or occupancy patterns.
+                Traditional energy monitoring solutions often fall short due to complex operations, harsh environments,
+                and the need for real-time, actionable insights.
               </p>
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/modern-office-energy.png"
-                alt="Modern office building with energy monitoring"
+                src="/modern-manufacturing-facility.png"
+                alt="Modern manufacturing facility with energy monitoring"
                 fill
                 className="object-cover"
               />
@@ -62,10 +61,9 @@ export default function CommercialRealEstatePage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
                   <AlertTriangle className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Energy Drains</h3>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">High Energy Costs</h3>
                 <p className="text-slate-600">
-                  Outdated HVAC, lighting, and control systems waste energy and money, while tenants and guests expect
-                  comfort and reliability.
+                  Energy consumption is a major variable cost, with inefficiencies directly eating into margins.
                 </p>
               </CardContent>
             </Card>
@@ -73,12 +71,11 @@ export default function CommercialRealEstatePage() {
             <Card className="border-none shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <Lightbulb className="h-6 w-6 text-coral-600" />
+                  <Wrench className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Retrofit Headaches</h3>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Equipment Downtime</h3>
                 <p className="text-slate-600">
-                  Retrofitting wired or battery-powered sensors disrupts operations and can be prohibitively expensive
-                  in occupied or historic buildings.
+                  Unexpected failures disrupt production, causing costly delays and lost revenue.
                 </p>
               </CardContent>
             </Card>
@@ -86,12 +83,11 @@ export default function CommercialRealEstatePage() {
             <Card className="border-none shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <LineChart className="h-6 w-6 text-coral-600" />
+                  <AlertTriangle className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Fragmented Data</h3>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Complex Operations</h3>
                 <p className="text-slate-600">
-                  Without unified, real-time insights, it's hard to optimize performance or justify investments in
-                  upgrades.
+                  Diverse machinery and processes make it difficult to get a unified view of energy use.
                 </p>
               </CardContent>
             </Card>
@@ -99,12 +95,12 @@ export default function CommercialRealEstatePage() {
             <Card className="border-none shadow-lg">
               <CardContent className="p-6">
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                  <BarChart3 className="h-6 w-6 text-coral-600" />
+                  <Gauge className="h-6 w-6 text-coral-600" />
                 </div>
-                <h3 className="mb-2 text-xl font-medium text-slate-900">Sustainability Pressures</h3>
+                <h3 className="mb-2 text-xl font-medium text-slate-900">Maintenance Challenges</h3>
                 <p className="text-slate-600">
-                  Achieving green certifications and ESG goals means tracking and proving efficiency gains across every
-                  square foot.
+                  Wired or battery-powered sensors require frequent upkeep and are hard to deploy in harsh or
+                  hard-to-reach areas.
                 </p>
               </CardContent>
             </Card>
@@ -120,15 +116,15 @@ export default function CommercialRealEstatePage() {
               Our Solution: Wireless, Batteryless Energy Intelligence
             </h2>
             <p className="mb-4 text-lg text-slate-600">
-              Say goodbye to complicated installations and hello to effortless efficiency.
+              Imagine a sensor network that adapts to your manufacturing environment.
             </p>
             <p className="mb-8 text-lg font-semibold text-coral-600">
-              Our wireless, batteryless sensors install in minutes—anywhere you need them, from lobbies to rooftops,
-              without the need for wires or battery changes.
+              Our wireless, batteryless sensors can be installed anywhere—on machines, inside panels, along production
+              lines—without wires, batteries, or maintenance.
             </p>
             <p className="text-lg text-slate-600">
-              They deliver continuous, actionable data on energy use, occupancy, air quality, and more, helping you
-              optimize comfort and efficiency with zero disruption.
+              They harvest energy from their surroundings, providing continuous, real-time data on equipment health,
+              energy consumption, and process efficiency.
             </p>
           </div>
 
@@ -141,10 +137,10 @@ export default function CommercialRealEstatePage() {
                   <li className="flex items-start">
                     <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
                     <div>
-                      <h4 className="font-bold text-slate-900">Non-Invasive Deployment</h4>
+                      <h4 className="font-bold text-slate-900">Deploy Anywhere, Instantly</h4>
                       <p className="text-slate-600">
-                        No drilling, no rewiring, no tenant complaints. Sensors blend seamlessly into any space and can
-                        be relocated as your building evolves.
+                        Place sensors exactly where you need them, even in the most inaccessible spots. No wiring, no
+                        downtime, no ongoing maintenance.
                       </p>
                     </div>
                   </li>
@@ -153,28 +149,28 @@ export default function CommercialRealEstatePage() {
                     <div>
                       <h4 className="font-bold text-slate-900">Comprehensive Visibility</h4>
                       <p className="text-slate-600">
-                        Monitor every system and space in real time. Instantly identify inefficiencies, equipment
-                        issues, or comfort problems.
+                        Gain a complete, real-time view of your manufacturing operations. Detect inefficiencies,
+                        identify failing assets early, and optimize energy use across your facility.
                       </p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
                     <div>
-                      <h4 className="font-bold text-slate-900">Automated Optimization</h4>
+                      <h4 className="font-bold text-slate-900">Predictive Maintenance</h4>
                       <p className="text-slate-600">
-                        Use AI-driven insights to fine-tune HVAC, lighting, and environmental controls for maximum
-                        efficiency and occupant satisfaction.
+                        Use data-driven insights to schedule maintenance proactively, reducing unplanned downtime and
+                        extending equipment life.
                       </p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle2 className="mr-3 h-6 w-6 flex-shrink-0 text-coral-500" />
                     <div>
-                      <h4 className="font-bold text-slate-900">Sustainability, Simplified</h4>
+                      <h4 className="font-bold text-slate-900">Sustainable and Scalable</h4>
                       <p className="text-slate-600">
-                        Track and report on energy savings, carbon reductions, and indoor air quality to meet
-                        certification and ESG requirements.
+                        Eliminate battery waste and reduce environmental impact. Scale your monitoring effortlessly as
+                        your operations grow.
                       </p>
                     </div>
                   </li>
@@ -192,35 +188,35 @@ export default function CommercialRealEstatePage() {
                       <BarChart3 className="h-6 w-6 text-coral-600" />
                     </div>
                     <p className="text-lg font-medium text-slate-900">
-                      <span className="text-coral-600">Up to 30% reduction in energy bills</span> through smarter,
-                      data-driven building management.
+                      <span className="text-coral-600">15–30% reduction in energy costs</span> by eliminating waste and
+                      optimizing processes.
                     </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                      <Building2 className="h-6 w-6 text-coral-600" />
+                      <AlertTriangle className="h-6 w-6 text-coral-600" />
                     </div>
                     <p className="text-lg font-medium text-slate-900">
-                      <span className="text-coral-600">Happier tenants and guests</span> with consistently comfortable,
-                      healthy environments.
+                      <span className="text-coral-600">Significant decrease in unplanned downtime</span> through early
+                      fault detection.
                     </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                      <Lightbulb className="h-6 w-6 text-coral-600" />
+                      <Gauge className="h-6 w-6 text-coral-600" />
                     </div>
                     <p className="text-lg font-medium text-slate-900">
-                      <span className="text-coral-600">Easier, faster retrofits</span> with minimal disruption and lower
-                      costs.
+                      <span className="text-coral-600">Lower total cost of ownership</span> with zero battery
+                      replacements or wiring.
                     </p>
                   </li>
                   <li className="flex items-center">
                     <div className="mr-4 flex h-12 w-12 items-center justify-center rounded-full bg-coral-100">
-                      <LineChart className="h-6 w-6 text-coral-600" />
+                      <Factory className="h-6 w-6 text-coral-600" />
                     </div>
                     <p className="text-lg font-medium text-slate-900">
-                      <span className="text-coral-600">A sustainable, future-proof building</span> that stands out in a
-                      competitive market.
+                      <span className="text-coral-600">A future-ready manufacturing facility</span> that's smarter,
+                      greener, and more competitive.
                     </p>
                   </li>
                 </ul>
@@ -234,9 +230,9 @@ export default function CommercialRealEstatePage() {
       <section className="bg-gradient-to-b from-slate-900 to-slate-800 py-16 text-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="mb-6 text-3xl font-bold">Ready to make your building smarter and more efficient?</h2>
+            <h2 className="mb-6 text-3xl font-bold">Ready to transform your manufacturing operations?</h2>
             <p className="mb-8 text-lg text-slate-300">
-              See how our maintenance-free sensors can help you achieve more—with less.
+              Discover how our maintenance-free energy intelligence platform can power your production excellence.
             </p>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button asChild size="lg" className="bg-coral-500 hover:bg-coral-600">

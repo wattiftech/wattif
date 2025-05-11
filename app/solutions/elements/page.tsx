@@ -5,17 +5,17 @@ import { motion, AnimatePresence } from "framer-motion"
 import {
   ArrowRight,
   Clock,
-  Bed,
-  ChefHat,
-  Users,
-  FlaskRoundIcon as Flask,
   Building,
   BarChart3,
   Thermometer,
   Server,
-  ShoppingBag,
   Microscope,
   CheckCircle2,
+  Users,
+  Warehouse,
+  HardHat,
+  Factory,
+  Truck,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -74,85 +74,6 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "hotels",
-      label: "Hotels",
-      icon: <Bed className="h-5 w-5" />,
-      image: "/modern-office-energy.png",
-      description:
-        "Balance guest comfort with energy efficiency across rooms, amenities, and back-of-house operations.",
-      elements: [
-        {
-          title: "After-Hours Energy Waste Detection",
-          icon: <Clock />,
-          description: "Identify energy waste during low-occupancy periods to reduce operational costs.",
-          benefits: [
-            "Identify unoccupied areas still consuming significant energy",
-            "Detect equipment running unnecessarily during low-occupancy periods",
-            "Track actual vs. scheduled HVAC and lighting operation",
-          ],
-        },
-        {
-          title: "Guest Room Energy Optimization",
-          icon: <Bed />,
-          description: "Optimize energy use in guest rooms while maintaining comfort standards.",
-          benefits: [
-            "Monitor room-specific consumption patterns against occupancy",
-            "Identify rooms with abnormal energy signatures requiring maintenance",
-            "Validate energy recovery effectiveness from unoccupied rooms",
-          ],
-        },
-        {
-          title: "Kitchen and Laundry Efficiency",
-          icon: <ChefHat />,
-          description: "Reduce energy costs in high-consumption hotel service areas.",
-          benefits: [
-            "Monitor high-energy equipment performance in real-time",
-            "Track energy consumption per meal served or pound of laundry",
-            "Identify equipment scheduling opportunities during off-peak hours",
-          ],
-        },
-      ],
-    },
-    {
-      id: "educational",
-      label: "Educational Buildings",
-      icon: <Flask className="h-5 w-5" />,
-      image: "/university-energy-monitoring.png",
-      description: "Manage energy across diverse campus facilities while supporting sustainability goals.",
-      elements: [
-        {
-          title: "Occupancy-Based Energy Management",
-          icon: <Users />,
-          description: "Align building energy use with actual occupancy patterns across campus.",
-          benefits: [
-            "Correlate energy use with actual classroom and facility usage",
-            "Identify conditioning waste during vacations and breaks",
-            "Optimize building schedules based on actual usage patterns",
-          ],
-        },
-        {
-          title: "Lab and Specialized Equipment Monitoring",
-          icon: <Flask />,
-          description: "Optimize energy-intensive research facilities without compromising research.",
-          benefits: [
-            "Track energy-intensive research equipment usage and efficiency",
-            "Ensure proper ventilation system operation without excess energy",
-            "Identify opportunities for consolidating research activities",
-          ],
-        },
-        {
-          title: "Campus-Wide Energy Allocation",
-          icon: <BarChart3 />,
-          description: "Accurately track and allocate energy costs across departments and buildings.",
-          benefits: [
-            "Accurately allocate energy costs to departments and buildings",
-            "Identify highest-priority buildings for efficiency upgrades",
-            "Support campus sustainability goals with verified consumption data",
-          ],
-        },
-      ],
-    },
-    {
       id: "datacenters",
       label: "Data Centers",
       icon: <Server className="h-5 w-5" />,
@@ -192,40 +113,79 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "retail",
-      label: "Multi-Site Retail",
-      icon: <ShoppingBag className="h-5 w-5" />,
-      image: "/retail-energy-monitoring.png",
-      description: "Standardize energy performance across locations while supporting merchandising needs.",
+      id: "construction",
+      label: "Construction Sites",
+      icon: <HardHat className="h-5 w-5" />,
+      image: "/energy-monitoring-dashboard.png",
+      description: "Monitor and optimize energy usage across temporary power systems and construction equipment.",
       elements: [
         {
-          title: "Store-to-Store Benchmarking",
-          icon: <ShoppingBag />,
-          description: "Compare energy performance across locations to identify best practices.",
+          title: "Temporary Power Optimization",
+          icon: <Clock />,
+          description: "Reduce waste from temporary power systems and equipment.",
           benefits: [
-            "Compare similar stores to identify outliers and best practices",
-            "Normalize energy use by traffic, sales or square footage",
-            "Identify specific operational differences driving performance variations",
+            "Track generator efficiency and fuel consumption",
+            "Identify equipment left running during off-hours",
+            "Optimize temporary HVAC during interior finishing phases",
           ],
         },
         {
-          title: "HVAC and Refrigeration Performance",
+          title: "Equipment Usage Analysis",
+          icon: <HardHat />,
+          description: "Monitor construction equipment energy consumption and utilization.",
+          benefits: [
+            "Track energy consumption of major equipment",
+            "Identify underutilized equipment for potential sharing",
+            "Support accurate job costing with detailed energy data",
+          ],
+        },
+        {
+          title: "Site Office Efficiency",
+          icon: <Building />,
+          description: "Optimize energy use in temporary offices and facilities.",
+          benefits: [
+            "Monitor and control temporary office energy consumption",
+            "Identify opportunities for lighting and HVAC optimization",
+            "Demonstrate sustainability commitments with verified data",
+          ],
+        },
+      ],
+    },
+    {
+      id: "logistics",
+      label: "Logistics Facilities",
+      icon: <Truck className="h-5 w-5" />,
+      image: "/modern-manufacturing-energy-monitoring.png",
+      description: "Optimize energy across loading docks, storage areas, and material handling systems.",
+      elements: [
+        {
+          title: "Loading Dock Optimization",
+          icon: <Truck />,
+          description: "Reduce energy waste in high-traffic loading and unloading areas.",
+          benefits: [
+            "Minimize thermal losses from open dock doors",
+            "Optimize dock equipment energy consumption",
+            "Track and reduce idle time energy waste",
+          ],
+        },
+        {
+          title: "Warehouse Climate Control",
           icon: <Thermometer />,
-          description: "Ensure critical systems operate efficiently without compromising product integrity.",
+          description: "Balance climate needs with energy efficiency in large storage spaces.",
           benefits: [
-            "Detect refrigeration system inefficiencies before product risk",
-            "Monitor HVAC performance against outdoor conditions",
-            "Identify maintenance needs based on system degradation",
+            "Optimize stratification in high-bay storage areas",
+            "Monitor temperature and humidity in sensitive storage zones",
+            "Identify opportunities for zoned climate control",
           ],
         },
         {
-          title: "Lighting and Equipment Analysis",
-          icon: <BarChart3 />,
-          description: "Optimize lighting and equipment operation across all locations.",
+          title: "Material Handling Equipment",
+          icon: <Warehouse />,
+          description: "Monitor and optimize energy use of conveyor systems and equipment.",
           benefits: [
-            "Verify lighting schedule compliance across locations",
-            "Identify abnormal equipment energy signatures requiring intervention",
-            "Track energy impact of merchandising and display changes",
+            "Track energy consumption of conveyor systems",
+            "Optimize charging schedules for electric forklifts and AGVs",
+            "Identify equipment requiring maintenance based on energy signatures",
           ],
         },
       ],
@@ -269,6 +229,45 @@ export default function ElementsPage() {
         },
       ],
     },
+    {
+      id: "industrial",
+      label: "Industrial Plants",
+      icon: <Factory className="h-5 w-5" />,
+      image: "/modern-manufacturing-facility.png",
+      description: "Optimize energy across production lines, equipment, and facility systems.",
+      elements: [
+        {
+          title: "Production Line Monitoring",
+          icon: <Factory />,
+          description: "Track and optimize energy consumption across manufacturing processes.",
+          benefits: [
+            "Monitor energy consumption per unit produced",
+            "Identify inefficient equipment or processes",
+            "Support lean manufacturing initiatives with energy data",
+          ],
+        },
+        {
+          title: "Compressed Air Optimization",
+          icon: <BarChart3 />,
+          description: "Reduce waste in one of manufacturing's most expensive utilities.",
+          benefits: [
+            "Detect and address compressed air leaks",
+            "Optimize compressor cycling and pressure settings",
+            "Track compressed air energy per unit of production",
+          ],
+        },
+        {
+          title: "Process Heating Efficiency",
+          icon: <Thermometer />,
+          description: "Optimize energy-intensive heating processes and equipment.",
+          benefits: [
+            "Monitor energy efficiency of furnaces and ovens",
+            "Identify heat recovery opportunities",
+            "Optimize process temperature profiles for energy savings",
+          ],
+        },
+      ],
+    },
   ]
 
   const currentBuildingType = buildingTypes.find((type) => type.id === activeTab) || buildingTypes[0]
@@ -284,7 +283,7 @@ export default function ElementsPage() {
       <PageHeader
         title="Wattif Elements"
         description="Energy-Focused Solutions for Six Building Types"
-        // image="/modular-energy-dashboard.png"
+        image="/modular-energy-dashboard.png"
       />
 
       {/* Hero Section with Animated Illustration */}
@@ -431,181 +430,66 @@ export default function ElementsPage() {
                               </li>
                             ))}
                           </ul>
-                          {currentBuildingType.id === "commercial" && element.title === "Tenant Energy Attribution" && (
-                            <Button
-                              variant="outline"
-                              className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                            >
-                              Start Allocating Costs
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </Button>
-                          )}
-                          {currentBuildingType.id === "commercial" && element.title === "Common Area Optimization" && (
-                            <Button
-                              variant="outline"
-                              className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                            >
-                              Start Reducing Waste
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </Button>
-                          )}
-                          {currentBuildingType.id === "commercial" &&
-                            element.title === "Peak Demand Charge Reduction" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Cutting Charges
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "hotels" &&
-                            element.title === "After-Hours Energy Waste Detection" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Eliminating Waste
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "hotels" &&
-                            element.title === "Guest Room Energy Optimization" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Optimizing Rooms
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "hotels" &&
-                            element.title === "Kitchen and Laundry Efficiency" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Saving Energy
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "educational" &&
-                            element.title === "Occupancy-Based Energy Management" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Matching Usage
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "educational" &&
-                            element.title === "Lab and Specialized Equipment Monitoring" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Monitoring Labs
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "educational" &&
-                            element.title === "Campus-Wide Energy Allocation" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Tracking Costs
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "datacenters" &&
-                            element.title === "Cooling Efficiency Optimization" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Optimizing PUE
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "datacenters" &&
-                            element.title === "Auxiliary System Monitoring" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Reducing Overhead
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "datacenters" &&
-                            element.title === "IT Equipment Load Analysis" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Identifying Waste
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "retail" && element.title === "Store-to-Store Benchmarking" && (
-                            <Button
-                              variant="outline"
-                              className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                            >
-                              Start Comparing Stores
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </Button>
-                          )}
-                          {currentBuildingType.id === "retail" &&
-                            element.title === "HVAC and Refrigeration Performance" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Preventing Failures
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "retail" &&
-                            element.title === "Lighting and Equipment Analysis" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Optimizing Usage
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "rd" && element.title === "Specialized Equipment Monitoring" && (
-                            <Button
-                              variant="outline"
-                              className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                            >
-                              Start Tracking Equipment
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </Button>
-                          )}
-                          {currentBuildingType.id === "rd" &&
-                            element.title === "Environmental Condition Efficiency" && (
-                              <Button
-                                variant="outline"
-                                className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                              >
-                                Start Balancing Conditions
-                                <ArrowRight className="ml-1 h-4 w-4" />
-                              </Button>
-                            )}
-                          {currentBuildingType.id === "rd" && element.title === "Safety System Optimization" && (
-                            <Button
-                              variant="outline"
-                              className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                            >
-                              Start Improving Safety
-                              <ArrowRight className="ml-1 h-4 w-4" />
-                            </Button>
-                          )}
+                          <Button
+                            variant="outline"
+                            className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
+                          >
+                            {activeTab === "commercial" &&
+                              element.title === "Tenant Energy Attribution" &&
+                              "Start Allocating Costs"}
+                            {activeTab === "commercial" &&
+                              element.title === "Common Area Optimization" &&
+                              "Start Reducing Waste"}
+                            {activeTab === "commercial" &&
+                              element.title === "Peak Demand Charge Reduction" &&
+                              "Start Cutting Charges"}
+                            {activeTab === "datacenters" &&
+                              element.title === "Cooling Efficiency Optimization" &&
+                              "Start Optimizing PUE"}
+                            {activeTab === "datacenters" &&
+                              element.title === "Auxiliary System Monitoring" &&
+                              "Start Reducing Overhead"}
+                            {activeTab === "datacenters" &&
+                              element.title === "IT Equipment Load Analysis" &&
+                              "Start Identifying Waste"}
+                            {activeTab === "construction" &&
+                              element.title === "Temporary Power Optimization" &&
+                              "Start Reducing Waste"}
+                            {activeTab === "construction" &&
+                              element.title === "Equipment Usage Analysis" &&
+                              "Start Tracking Equipment"}
+                            {activeTab === "construction" &&
+                              element.title === "Site Office Efficiency" &&
+                              "Start Optimizing Offices"}
+                            {activeTab === "logistics" &&
+                              element.title === "Loading Dock Optimization" &&
+                              "Start Reducing Losses"}
+                            {activeTab === "logistics" &&
+                              element.title === "Warehouse Climate Control" &&
+                              "Start Balancing Climate"}
+                            {activeTab === "logistics" &&
+                              element.title === "Material Handling Equipment" &&
+                              "Start Optimizing Systems"}
+                            {activeTab === "rd" &&
+                              element.title === "Specialized Equipment Monitoring" &&
+                              "Start Tracking Equipment"}
+                            {activeTab === "rd" &&
+                              element.title === "Environmental Condition Efficiency" &&
+                              "Start Balancing Conditions"}
+                            {activeTab === "rd" &&
+                              element.title === "Safety System Optimization" &&
+                              "Start Improving Safety"}
+                            {activeTab === "industrial" &&
+                              element.title === "Production Line Monitoring" &&
+                              "Start Tracking Production"}
+                            {activeTab === "industrial" &&
+                              element.title === "Compressed Air Optimization" &&
+                              "Start Reducing Leaks"}
+                            {activeTab === "industrial" &&
+                              element.title === "Process Heating Efficiency" &&
+                              "Start Optimizing Heat"}
+                            <ArrowRight className="ml-1 h-4 w-4" />
+                          </Button>
                         </div>
                       </CardContent>
                     </Card>

@@ -38,8 +38,8 @@ export default function EnterprisePagePage() {
             <div className="flex items-center justify-center">
               <div className="relative h-[300px] w-full overflow-hidden rounded-lg shadow-xl">
                 <Image
-                  src="/placeholder.svg?key=ermf6"
-                  alt="Wattif Enterprise Dashboard"
+                  src="/placeholder.svg?key=wfo0t"
+                  alt="Wattif Enterprise Dashboard showing multi-site energy monitoring"
                   fill
                   className="object-cover"
                 />
