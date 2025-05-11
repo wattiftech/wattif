@@ -21,7 +21,7 @@ export default function AboutPage() {
             <div>
               <h2 className="mb-6 text-3xl font-bold text-slate-900">Our Story</h2>
               <p className="mb-4 text-lg text-slate-600">
-                We started Wattif in 2021 with a simple question: Why is energy monitoring still so complicated?
+                We started Wattif with a simple question: Why is energy monitoring still so complicated?
               </p>
               <p className="mb-4 text-lg text-slate-600">
                 Modern buildings have sophisticated systems for everything from security to climate control, yet most

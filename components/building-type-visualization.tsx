@@ -214,49 +214,49 @@ export function BuildingTypeVisualization() {
       ],
     },
     {
-      id: "education",
-      name: "Education",
-      description: "Optimize energy usage across campus buildings and classrooms",
+      id: "industrial",
+      name: "Industrial Facility",
+      description: "Optimize energy usage across manufacturing floors and production lines",
       monitoringPoints: [
         {
-          id: "edu-main",
+          id: "ind-main",
           title: "Main Distribution",
-          description: "Monitors overall campus or building power consumption",
+          description: "Monitors overall facility power consumption and demand patterns",
           x: 15,
           y: 80,
           category: "main",
         },
         {
-          id: "edu-hvac",
-          title: "Classroom HVAC",
-          description: "Tracks heating and cooling systems in learning environments",
+          id: "ind-hvac",
+          title: "Industrial HVAC",
+          description: "Tracks heating, ventilation, and cooling systems for production areas",
           x: 40,
           y: 30,
           category: "hvac",
         },
         {
-          id: "edu-lab",
-          title: "Laboratory Equipment",
-          description: "Monitors specialized equipment in science and research labs",
+          id: "ind-production",
+          title: "Production Equipment",
+          description: "Monitors energy-intensive manufacturing machinery and assembly lines",
           x: 70,
           y: 50,
-          category: "equipment",
+          category: "production",
         },
         {
-          id: "edu-lighting",
+          id: "ind-lighting",
           title: "Facility Lighting",
-          description: "Tracks lighting systems across classrooms and common areas",
+          description: "Tracks lighting systems across production floors and warehousing",
           x: 30,
           y: 60,
           category: "lighting",
         },
         {
-          id: "edu-it",
-          title: "IT Infrastructure",
-          description: "Monitors computer labs and networking equipment",
+          id: "ind-compressors",
+          title: "Air Compressors",
+          description: "Monitors compressed air systems used throughout the facility",
           x: 60,
           y: 20,
-          category: "server",
+          category: "equipment",
         },
       ],
     },
@@ -690,35 +690,42 @@ export function BuildingTypeVisualization() {
             <rect x="43" y="78" width="5" height="1" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.2" />
           </svg>
         )
-      case "education":
+      case "industrial":
         return (
           <svg
             viewBox="0 0 100 100"
             className="absolute inset-0 w-full h-full"
             style={{ filter: "drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1))" }}
           >
-            {/* Education building */}
+            {/* Industrial facility building */}
             <rect x="10" y="20" width="80" height="65" fill="#f8fafc" stroke="#94a3b8" strokeWidth="0.5" />
 
-            {/* Roof/top floor */}
-            <rect x="10" y="20" width="80" height="10" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="0.5" />
+            {/* Roof with equipment */}
+            <rect x="10" y="20" width="80" height="5" fill="#e2e8f0" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="15" y="15" width="10" height="5" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="30" y="15" width="10" height="5" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="70" y="15" width="15" height="5" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
 
-            {/* Windows */}
-            <rect x="15" y="35" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="30" y="35" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="45" y="35" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="60" y="35" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="75" y="35" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            {/* Factory windows */}
+            <rect x="15" y="30" width="10" height="5" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            <rect x="30" y="30" width="10" height="5" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            <rect x="45" y="30" width="10" height="5" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            <rect x="60" y="30" width="10" height="5" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            <rect x="75" y="30" width="10" height="5" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
 
-            <rect x="15" y="50" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="30" y="50" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="45" y="50" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="60" y="50" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
-            <rect x="75" y="50" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            {/* Factory floor */}
+            <rect x="15" y="40" width="70" height="30" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="0.3" />
+
+            {/* Production machinery */}
+            <rect x="20" y="45" width="15" height="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="40" y="45" width="15" height="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="60" y="45" width="15" height="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="20" y="60" width="15" height="5" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="40" y="60" width="15" height="5" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
+            <rect x="60" y="60" width="15" height="5" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
 
             {/* Main entrance */}
-            <rect x="40" y="70" width="20" height="15" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
-            <rect x="45" y="75" width="10" height="10" fill="#bfdbfe" stroke="#94a3b8" strokeWidth="0.3" />
+            <rect x="45" y="75" width="10" height="10" fill="#cbd5e1" stroke="#94a3b8" strokeWidth="0.5" />
 
             {/* Main Distribution - clearly labeled */}
             <rect x="10" y="75" width="20" height="10" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="0.8" />
@@ -731,20 +738,20 @@ export function BuildingTypeVisualization() {
             <line x1="12" y1="84" x2="28" y2="84" stroke="#64748b" strokeWidth="0.3" />
             <line x1="12" y1="85" x2="28" y2="85" stroke="#64748b" strokeWidth="0.3" />
 
-            {/* Classroom HVAC - clearly labeled */}
+            {/* Industrial HVAC - clearly labeled */}
             <rect x="35" y="25" width="15" height="10" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="0.8" />
             <text x="42.5" y="29" fontSize="2" textAnchor="middle" fill="#64748b">
-              CLASSROOM
+              INDUSTRIAL
             </text>
             <text x="42.5" y="32" fontSize="2" textAnchor="middle" fill="#64748b">
               HVAC
             </text>
             <rect x="38" y="34" width="9" height="2" fill="#94a3b8" stroke="#64748b" strokeWidth="0.3" />
 
-            {/* Laboratory Equipment - clearly labeled */}
+            {/* Production Equipment - clearly labeled */}
             <rect x="65" y="45" width="15" height="15" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="0.8" />
             <text x="72.5" y="49" fontSize="2" textAnchor="middle" fill="#64748b">
-              LABORATORY
+              PRODUCTION
             </text>
             <text x="72.5" y="52" fontSize="2" textAnchor="middle" fill="#64748b">
               EQUIPMENT
@@ -766,13 +773,13 @@ export function BuildingTypeVisualization() {
             <circle cx="30" cy="57" r="1" fill="#f59e0b" opacity="0.7" />
             <circle cx="35" cy="57" r="1" fill="#f59e0b" opacity="0.7" />
 
-            {/* IT Infrastructure - clearly labeled */}
+            {/* Air Compressors - clearly labeled */}
             <rect x="55" y="15" width="15" height="10" fill="#f1f5f9" stroke="#94a3b8" strokeWidth="0.8" />
             <text x="62.5" y="19" fontSize="2" textAnchor="middle" fill="#64748b">
-              IT
+              AIR
             </text>
             <text x="62.5" y="22" fontSize="2" textAnchor="middle" fill="#64748b">
-              INFRASTRUCTURE
+              COMPRESSORS
             </text>
             <rect x="57" y="23" width="4" height="1.5" fill="#64748b" stroke="#475569" strokeWidth="0.2" />
             <rect x="62" y="23" width="4" height="1.5" fill="#64748b" stroke="#475569" strokeWidth="0.2" />
