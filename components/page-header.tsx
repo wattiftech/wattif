@@ -4,12 +4,11 @@ interface PageHeaderProps {
   title: string
   description: string
   icon?: ReactNode
-  
 }
 
 export function PageHeader({ title, description, icon }: PageHeaderProps) {
   return (
-    <section className="bg-gradient-to-b from-slate-900 to-slate-800 py-16 text-white">
+    <section className="bg-gradient-to-b from-slate-900 to-slate-800 py-16 text-white" >
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl text-center">
           {icon && <div className="mb-4 flex justify-center">{icon}</div>}
@@ -18,6 +17,6 @@ export function PageHeader({ title, description, icon }: PageHeaderProps) {
           <p className="text-xl text-slate-200 leading-relaxed max-w-2xl mx-auto font-light">{description}</p>
         </div>
       </div>
-    </section>
+    </section >
   )
 }

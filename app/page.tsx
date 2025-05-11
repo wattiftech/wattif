@@ -59,7 +59,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description })
   </div>
 )
 
-export default function Home() {
+export default function HomePage() {
   const [activeTab, setActiveTab] = useState(0)
   const [selectedIndustry, setSelectedIndustry] = useState(0)
 
