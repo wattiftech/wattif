@@ -17,7 +17,7 @@ export function Navbar() {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <Image alt="Logo" height={32} width={32} className="h-5 w-auto" src={"/watif_logo_black.png"} />
+            <Image src="/Wattif_Logo-transparent.png" width={20} height={32} alt="Wattif Logo" className="h-12 w-auto" />
             {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
             <span className="text-2xl font-light text-slate-900">Tech</span> */}
           </Link>
@@ -128,7 +128,7 @@ export function Navbar() {
                 {/* <span className="text-2xl font-bold text-coral-500">Wattif</span>
                 <span className="text-2xl font-light text-slate-900">Tech</span> */}
 
-                <Image alt="Logo" height={32} width={32} className="h-5 w-auto" src={"/watif_logo_black.png"} />
+                <Image src="/Wattif_Logo-transparent.png" width={20} height={32} alt="Wattif Logo" className="h-12 w-auto" />
 
               </Link>
 
