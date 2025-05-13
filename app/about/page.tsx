@@ -6,18 +6,55 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
-import { PageHeader } from "@/components/page-header"
 
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
 
-      <PageHeader title="About Wattif" description="Energy Intelligence Reimagined" icon={<Link href="/" className="flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
-        <Image src="/logo-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
-        <Image src="/tagline-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+      <section className="relative bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 py-28 text-white overflow-hidden">
+        {/* Background effects */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-coral-500/10 rounded-full blur-[100px]"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-[100px]"></div>
+        </div>
+        <div
+          className="absolute inset-0 z-0 opacity-10"
+          style={{
+            backgroundImage: "linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "40px 40px"
+          }}
+        ></div>
 
-      </Link>} />
+        {/* Content */}
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+          <div className="mx-auto max-w-3xl flex flex-col items-center justify-center">
+            <div className="mb-5 transform transition-all duration-500 hover:scale-105">
+              <Link href="/" className="flex flex-col items-center gap-y-2 w-40">
+                <Image
+                  src="/logo-white.png"
+                  width={160}
+                  height={160}
+                  alt="Wattif Logo"
+                  className="h-auto w-full drop-shadow-lg"
+                />
+                <Image
+                  src="/tagline-white.png"
+                  width={260}
+                  height={50}
+                  alt="Wattif Tagline"
+                  className="h-auto w-full  drop-shadow-md"
+                />
+              </Link>
+            </div>
+            <div className="w-24 h-1 bg-gradient-to-r from-coral-400 to-coral-500 rounded-full mx-auto mb-6"></div>
+            <p className="text-xl text-slate-100 leading-relaxed max-w-2xl mx-auto font-light tracking-wide animate-fadeIn">
+              Energy Intelligence Reimagined
+            </p>
+          </div>
+        </div>
+      </section>
+
 
       <section className="bg-white py-16">
         <div className="container mx-auto px-4 md:px-6">

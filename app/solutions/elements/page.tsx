@@ -23,6 +23,7 @@ import { PageHeader } from "@/components/page-header"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 export default function ElementsPage() {
   const [activeTab, setActiveTab] = useState("commercial")
@@ -299,12 +300,16 @@ export default function ElementsPage() {
                 challenges.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-coral-500 hover:bg-coral-600">
-                  Find Your Elements
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button asChild size="lg" className="bg-coral-500 hover:bg-coral-600">
+                  <Link href="#select-your-building-type">
+                    Find Your Elements
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
-                <Button size="lg" variant="outline">
-                  Schedule Consultation
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/contact">
+                    Schedule Consultation
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -325,7 +330,7 @@ export default function ElementsPage() {
       </section>
 
       {/* Building Type Selector */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-50" id="select-your-building-type">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Select Your Building Type</h2>
@@ -637,13 +642,17 @@ export default function ElementsPage() {
                   </p>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-4">
+                  <Link href="/contact">
                   <Button size="lg" className="bg-coral-500 hover:bg-coral-600 px-8">
                     Get Started
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
+                  </Link>
+                  <Link href="/pricing">
                   <Button size="lg" variant="outline">
                     View Pricing
                   </Button>
+                  </Link>
                 </div>
               </div>
             </div>
