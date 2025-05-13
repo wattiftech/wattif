@@ -313,7 +313,7 @@ export default function HomePage() {
                   className="border-slate-700 bg-slate-900/50 text-slate-300 backdrop-blur-sm transition-all hover:border-coral-500 hover:text-coral-400"
                 >
                   <Link href="#how-it-works">
-                    Calculate Potential Savings
+                    How it Works
                   </Link>
                 </Button>
               </div>
