@@ -75,7 +75,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "datacenters",
+      id: "data-centers",
       label: "Data Centers",
       icon: <Server className="h-5 w-5" />,
       image: "/modern-data-center-energy-monitoring.png",
@@ -153,7 +153,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "logistics",
+      id: "logistics-facilities",
       label: "Logistics Facilities",
       icon: <Truck className="h-5 w-5" />,
       image: "/modern-manufacturing-energy-monitoring.png",
@@ -390,9 +390,15 @@ export default function ElementsPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="bg-coral-500 hover:bg-coral-600">
-                    Explore {currentBuildingType.label} Solutions
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button asChild className="bg-coral-500 hover:bg-coral-600">
+                    <Link href={`/industries/${currentBuildingType.id === 'commercial' ? 'commercial-real-estate' : 
+                      currentBuildingType.id === 'rd' ? 'r-and-d-facilities' : 
+                      currentBuildingType.id + (currentBuildingType.id === 'data-centers' ? '' : 
+                      currentBuildingType.id === 'logistics-facilities' ? '' :
+                      currentBuildingType.id === 'industrial' ? '-plants' : '-sites')}`}>
+                      Explore {currentBuildingType.label} Solutions
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
                   </Button>
                 </div>
                 <div className="relative">
@@ -436,64 +442,68 @@ export default function ElementsPage() {
                             ))}
                           </ul>
                           <Button
+                            asChild
                             variant="outline"
                             className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
                           >
-                            {activeTab === "commercial" &&
-                              element.title === "Tenant Energy Attribution" &&
-                              "Start Allocating Costs"}
-                            {activeTab === "commercial" &&
-                              element.title === "Common Area Optimization" &&
-                              "Start Reducing Waste"}
-                            {activeTab === "commercial" &&
-                              element.title === "Peak Demand Charge Reduction" &&
-                              "Start Cutting Charges"}
-                            {activeTab === "datacenters" &&
-                              element.title === "Cooling Efficiency Optimization" &&
-                              "Start Optimizing PUE"}
-                            {activeTab === "datacenters" &&
-                              element.title === "Auxiliary System Monitoring" &&
-                              "Start Reducing Overhead"}
-                            {activeTab === "datacenters" &&
-                              element.title === "IT Equipment Load Analysis" &&
-                              "Start Identifying Waste"}
-                            {activeTab === "construction" &&
-                              element.title === "Temporary Power Optimization" &&
-                              "Start Reducing Waste"}
-                            {activeTab === "construction" &&
-                              element.title === "Equipment Usage Analysis" &&
-                              "Start Tracking Equipment"}
-                            {activeTab === "construction" &&
-                              element.title === "Site Office Efficiency" &&
-                              "Start Optimizing Offices"}
-                            {activeTab === "logistics" &&
-                              element.title === "Loading Dock Optimization" &&
-                              "Start Reducing Losses"}
-                            {activeTab === "logistics" &&
-                              element.title === "Warehouse Climate Control" &&
-                              "Start Balancing Climate"}
-                            {activeTab === "logistics" &&
-                              element.title === "Material Handling Equipment" &&
-                              "Start Optimizing Systems"}
-                            {activeTab === "rd" &&
-                              element.title === "Specialized Equipment Monitoring" &&
-                              "Start Tracking Equipment"}
-                            {activeTab === "rd" &&
-                              element.title === "Environmental Condition Efficiency" &&
-                              "Start Balancing Conditions"}
-                            {activeTab === "rd" &&
-                              element.title === "Safety System Optimization" &&
-                              "Start Improving Safety"}
-                            {activeTab === "industrial" &&
-                              element.title === "Production Line Monitoring" &&
-                              "Start Tracking Production"}
-                            {activeTab === "industrial" &&
-                              element.title === "Compressed Air Optimization" &&
-                              "Start Reducing Leaks"}
-                            {activeTab === "industrial" &&
-                              element.title === "Process Heating Efficiency" &&
-                              "Start Optimizing Heat"}
-                            <ArrowRight className="ml-1 h-4 w-4" />
+                            {/*  href={`/solutions/${element.title.toLowerCase().replace(/\s+/g, '-')}`} */}
+                            <Link href={`/contact`}>
+                              {activeTab === "commercial" &&
+                                element.title === "Tenant Energy Attribution" &&
+                                "Start Allocating Costs"}
+                              {activeTab === "commercial" &&
+                                element.title === "Common Area Optimization" &&
+                                "Start Reducing Waste"}
+                              {activeTab === "commercial" &&
+                                element.title === "Peak Demand Charge Reduction" &&
+                                "Start Cutting Charges"}
+                              {activeTab === "data-centers" &&
+                                element.title === "Cooling Efficiency Optimization" &&
+                                "Start Optimizing PUE"}
+                              {activeTab === "data-centers" &&
+                                element.title === "Auxiliary System Monitoring" &&
+                                "Start Reducing Overhead"}
+                              {activeTab === "data-centers" &&
+                                element.title === "IT Equipment Load Analysis" &&
+                                "Start Identifying Waste"}
+                              {activeTab === "construction" &&
+                                element.title === "Temporary Power Optimization" &&
+                                "Start Reducing Waste"}
+                              {activeTab === "construction" &&
+                                element.title === "Equipment Usage Analysis" &&
+                                "Start Tracking Equipment"}
+                              {activeTab === "construction" &&
+                                element.title === "Site Office Efficiency" &&
+                                "Start Optimizing Offices"}
+                              {activeTab === "logistics" &&
+                                element.title === "Loading Dock Optimization" &&
+                                "Start Reducing Losses"}
+                              {activeTab === "logistics" &&
+                                element.title === "Warehouse Climate Control" &&
+                                "Start Balancing Climate"}
+                              {activeTab === "logistics" &&
+                                element.title === "Material Handling Equipment" &&
+                                "Start Optimizing Systems"}
+                              {activeTab === "rd" &&
+                                element.title === "Specialized Equipment Monitoring" &&
+                                "Start Tracking Equipment"}
+                              {activeTab === "rd" &&
+                                element.title === "Environmental Condition Efficiency" &&
+                                "Start Balancing Conditions"}
+                              {activeTab === "rd" &&
+                                element.title === "Safety System Optimization" &&
+                                "Start Improving Safety"}
+                              {activeTab === "industrial" &&
+                                element.title === "Production Line Monitoring" &&
+                                "Start Tracking Production"}
+                              {activeTab === "industrial" &&
+                                element.title === "Compressed Air Optimization" &&
+                                "Start Reducing Leaks"}
+                              {activeTab === "industrial" &&
+                                element.title === "Process Heating Efficiency" &&
+                                "Start Optimizing Heat"}
+                              <ArrowRight className="ml-1 h-4 w-4" />
+                            </Link>
                           </Button>
                         </div>
                       </CardContent>
