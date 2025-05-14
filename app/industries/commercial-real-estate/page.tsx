@@ -42,7 +42,7 @@ export default function CommercialRealEstatePage() {
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/modern-office-energy.png"
+                src="/commercial-real-estate.png"
                 alt="Modern office building with energy monitoring"
                 fill
                 className="object-cover"

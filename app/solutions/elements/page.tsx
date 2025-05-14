@@ -26,7 +26,7 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 export default function ElementsPage() {
-  const [activeTab, setActiveTab] = useState("commercial")
+  const [activeTab, setActiveTab] = useState("commercial-real-estate")
   const [mounted, setMounted] = useState(false)
 
   // Handle hydration issues
@@ -36,7 +36,7 @@ export default function ElementsPage() {
 
   const buildingTypes = [
     {
-      id: "commercial",
+      id: "commercial-real-estate",
       label: "Commercial Real Estate",
       icon: <Building className="h-5 w-5" />,
       image: "/commercial-real-estate.png",
@@ -95,7 +95,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "datacenters",
+      id: "data-centers",
       label: "Data Centers",
       icon: <Server className="h-5 w-5" />,
       image: "/data-centers.png",
@@ -144,7 +144,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "construction",
+      id: "construction-sites",
       label: "Construction Sites",
       icon: <HardHat className="h-5 w-5" />,
       image: "/construction-site.png",
@@ -193,7 +193,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "logistics",
+      id: "logistics-facilities",
       label: "Logistics Facilities",
       icon: <Truck className="h-5 w-5" />,
       image: "/logistics-facility.png",
@@ -242,7 +242,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "rd",
+      id: "r-and-d-facilities",
       label: "R&D Facilities",
       icon: <Microscope className="h-5 w-5" />,
       image: "/energy-monitoring-dashboard.png",
@@ -291,7 +291,7 @@ export default function ElementsPage() {
       ],
     },
     {
-      id: "industrial",
+      id: "industrial-plants",
       label: "Industrial Plants",
       icon: <Factory className="h-5 w-5" />,
       image: "/industrial-plant.png",
@@ -460,10 +460,12 @@ export default function ElementsPage() {
                       </li>
                     ))}
                   </ul>
-                  <Button className="bg-coral-500 hover:bg-coral-600">
-                    Explore {currentBuildingType.label} Solutions
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
+                  <Link href={`/industries/${currentBuildingType.id}`}>
+                    <Button className="bg-coral-500 hover:bg-coral-600">
+                      Explore {currentBuildingType.label} Solutions
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
                 </div>
                 <div className="relative">
                   <div className="absolute -inset-4 bg-gradient-to-r from-coral-200/20 to-blue-200/20 rounded-3xl blur-xl"></div>
@@ -505,94 +507,97 @@ export default function ElementsPage() {
                               </li>
                             ))}
                           </ul>
-                          <Button
-                            variant="outline"
-                            className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                          >
-                            {activeTab === "commercial" &&
-                              element.title === "Tenant Energy Attribution" &&
-                              "Start Allocating Costs"}
-                            {activeTab === "commercial" &&
-                              element.title === "Common Area Optimization" &&
-                              "Start Reducing Waste"}
-                            {activeTab === "commercial" &&
-                              element.title === "Peak Demand Charge Reduction" &&
-                              "Start Cutting Charges"}
-                            {activeTab === "commercial" &&
-                              element.title === "Lighting and Scheduling Optimization" &&
-                              "Start Optimizing Lighting"}
+                          <Link href={'/contact'}>
+                            <Button
+                              variant="outline"
+                              className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
+                            >
+                              {
+                                element.title === "Tenant Energy Attribution" &&
+                                "Start Allocating Costs"}
+                              {
+                                element.title === "Common Area Optimization" &&
+                                "Start Reducing Waste"}
+                              {
+                                element.title === "Peak Demand Charge Reduction" &&
+                                "Start Cutting Charges"}
+                              {
+                                element.title === "Lighting and Scheduling Optimization" &&
+                                "Start Optimizing Lighting"}
 
-                            {activeTab === "datacenters" &&
-                              element.title === "PUE Optimization" &&
-                              "Start Optimizing PUE"}
-                            {activeTab === "datacenters" &&
-                              element.title === "Critical System Monitoring" &&
-                              "Start Monitoring Systems"}
-                            {activeTab === "datacenters" &&
-                              element.title === "Cooling Efficiency Analysis" &&
-                              "Start Analyzing Cooling"}
-                            {activeTab === "datacenters" &&
-                              element.title === "Capacity Planning" &&
-                              "Start Planning Capacity"}
+                              {
+                                element.title === "PUE Optimization" &&
+                                "Start Optimizing PUE"}
+                              {
+                                element.title === "Critical System Monitoring" &&
+                                "Start Monitoring Systems"}
+                              {
+                                element.title === "Cooling Efficiency Analysis" &&
+                                "Start Analyzing Cooling"}
+                              {
+                                element.title === "Capacity Planning" &&
+                                "Start Planning Capacity"}
 
-                            {activeTab === "construction" &&
-                              element.title === "Equipment Utilization Tracking" &&
-                              "Start Tracking Equipment"}
-                            {activeTab === "construction" &&
-                              element.title === "Temporary Power Optimization" &&
-                              "Start Optimizing Power"}
-                            {activeTab === "construction" &&
-                              element.title === "Project Cost Allocation" &&
-                              "Start Allocating Costs"}
-                            {activeTab === "construction" &&
-                              element.title === "Safety and Compliance Monitoring" &&
-                              "Start Monitoring Safety"}
+                              {
+                                element.title === "Equipment Utilization Tracking" &&
+                                "Start Tracking Equipment"}
+                              {
+                                element.title === "Temporary Power Optimization" &&
+                                "Start Optimizing Power"}
+                              {
+                                element.title === "Project Cost Allocation" &&
+                                "Start Allocating Costs"}
+                              {
+                                element.title === "Safety and Compliance Monitoring" &&
+                                "Start Monitoring Safety"}
 
-                            {activeTab === "logistics" &&
-                              element.title === "Zone-Based Energy Management" &&
-                              "Start Managing Zones"}
-                            {activeTab === "logistics" &&
-                              element.title === "Loading Dock Optimization" &&
-                              "Start Optimizing Docks"}
-                            {activeTab === "logistics" &&
-                              element.title === "Cold Storage Efficiency" &&
-                              "Start Optimizing Storage"}
-                            {activeTab === "logistics" &&
-                              element.title === "Automated Systems Monitoring" &&
-                              "Start Monitoring Systems"}
+                              {
+                                element.title === "Zone-Based Energy Management" &&
+                                "Start Managing Zones"}
+                              {
+                                element.title === "Loading Dock Optimization" &&
+                                "Start Optimizing Docks"}
+                              {
+                                element.title === "Cold Storage Efficiency" &&
+                                "Start Optimizing Storage"}
+                              {
+                                element.title === "Automated Systems Monitoring" &&
+                                "Start Monitoring Systems"}
 
-                            {activeTab === "rd" &&
-                              element.title === "Precision Environmental Control" &&
-                              "Start Controlling Environment"}
-                            {activeTab === "rd" &&
-                              element.title === "Experiment Correlation Analysis" &&
-                              "Start Analyzing Experiments"}
-                            {activeTab === "rd" &&
-                              element.title === "Lab Equipment Efficiency" &&
-                              "Start Optimizing Equipment"}
-                            {activeTab === "rd" &&
-                              element.title === "Clean Room Optimization" &&
-                              "Start Optimizing Clean Rooms"}
+                              {
+                                element.title === "Precision Environmental Control" &&
+                                "Start Controlling Environment"}
+                              {
+                                element.title === "Experiment Correlation Analysis" &&
+                                "Start Analyzing Experiments"}
+                              {
+                                element.title === "Lab Equipment Efficiency" &&
+                                "Start Optimizing Equipment"}
+                              {
+                                element.title === "Clean Room Optimization" &&
+                                "Start Optimizing Clean Rooms"}
 
-                            {activeTab === "industrial" &&
-                              element.title === "Peak Demand Charge Reduction" &&
-                              "Start Reducing Charges"}
-                            {activeTab === "industrial" &&
-                              element.title === "Process Optimization" &&
-                              "Start Optimizing Processes"}
-                            {activeTab === "industrial" &&
-                              element.title === "Predictive Maintenance" &&
-                              "Start Predicting Maintenance"}
-                            {activeTab === "industrial" &&
-                              element.title === "Regulatory Compliance" &&
-                              "Start Automating Compliance"}
+                              {activeTab === "industrial" &&
+                                element.title === "Peak Demand Charge Reduction" &&
+                                "Start Reducing Charges"}
+                              {activeTab === "industrial" &&
+                                element.title === "Process Optimization" &&
+                                "Start Optimizing Processes"}
+                              {activeTab === "industrial" &&
+                                element.title === "Predictive Maintenance" &&
+                                "Start Predicting Maintenance"}
+                              {activeTab === "industrial" &&
+                                element.title === "Regulatory Compliance" &&
+                                "Start Automating Compliance"}
 
-                            {activeTab === "commercial" &&
-                              element.title === "Building Intelligence" &&
-                              "Start Monitoring Performance"}
+                              {activeTab === "commercial" &&
+                                element.title === "Building Intelligence" &&
+                                "Start Monitoring Performance"}
 
-                            <ArrowRight className="ml-1 h-4 w-4" />
-                          </Button>
+                              <ArrowRight className="ml-1 h-4 w-4" />
+                            </Button>
+                          </Link>
+
                         </div>
                       </CardContent>
                     </Card>

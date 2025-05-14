@@ -41,7 +41,7 @@ export default function ManufacturingPlantsPage() {
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/modern-manufacturing-facility.png"
+                src="/industrial-plant.png"
                 alt="Modern manufacturing facility with energy monitoring"
                 fill
                 className="object-cover"

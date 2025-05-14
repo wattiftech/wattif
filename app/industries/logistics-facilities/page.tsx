@@ -38,7 +38,7 @@ export default function LogisticsFacilitiesPage() {
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/retail-energy-monitoring.png"
+                src="/logistics-facility.png"
                 alt="Logistics facility with energy monitoring"
                 fill
                 className="object-cover"

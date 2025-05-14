@@ -36,7 +36,7 @@ export default function RAndDFacilitiesPage() {
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/university-energy-monitoring.png"
+                src="/energy-monitoring-dashboard.png"
                 alt="R&D facility with energy monitoring"
                 fill
                 className="object-cover"

@@ -25,7 +25,7 @@ export default function IndustriesPage() {
             title="Manufacturing Plants"
             description="Align energy use with production demands and identify high-cost systems to reduce waste while maintaining output."
             icon={<Factory className="h-10 w-10 text-coral-500" />}
-            href="/industries/manufacturing-plants"
+            href="/industries/industrial-plants"
           />
           <IndustryCard
             title="Data Centers"

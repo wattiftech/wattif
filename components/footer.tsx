@@ -105,7 +105,7 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-medium text-white">Industries</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/industries/manufacturing-plants" className="hover:text-coral-400">
+                <Link href="/industries/industrial-plants" className="hover:text-coral-400">
                   Manufacturing Plants
                 </Link>
               </li>

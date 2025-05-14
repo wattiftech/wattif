@@ -37,7 +37,7 @@ export default function DataCentersPage() {
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/modern-data-center-energy-monitoring.png"
+                src="/data-centers.png"
                 alt="Modern data center with energy monitoring"
                 fill
                 className="object-cover"

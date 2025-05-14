@@ -37,7 +37,7 @@ export default function ConstructionSitesPage() {
             </div>
             <div className="relative mx-auto aspect-video w-full max-w-lg overflow-hidden rounded-xl shadow-xl md:mx-0">
               <Image
-                src="/modern-manufacturing-facility.png"
+                src="/construction-site.png"
                 alt="Construction site with energy monitoring equipment"
                 fill
                 className="object-cover"
