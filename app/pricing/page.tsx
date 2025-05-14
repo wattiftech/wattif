@@ -39,8 +39,8 @@ export default function PricingPage() {
             <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-8">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Simple Pricing Structure</h3>
               <p className="text-slate-600 mb-6">
-                We keep our pricing straightforward and transparent, starting at just 0.25% of your annual energy spend
-                for annual subscriptions. Your price is based on four key factors:
+                We keep our pricing straightforward and transparent, with software subscriptions starting at just 0.25%
+                of your annual energy spend for annual subscriptions. Your price is based on four key factors:
               </p>
               <div className="space-y-4">
                 <div className="flex items-start">
@@ -218,6 +218,100 @@ export default function PricingPage() {
             </div>
           </div>
 
+          <div className="bg-white rounded-xl shadow-sm border border-slate-100 p-8 mt-8">
+            <h3 className="text-2xl font-bold text-slate-900 mb-4">Hardware Investment</h3>
+            <p className="text-slate-600 mb-6">
+              Our hardware components are a one-time purchase, separate from the software subscription:
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-coral-100 flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-coral-600"
+                  >
+                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium text-slate-900">Monitoring Sensors</h4>
+                  <p className="text-slate-600">
+                    Non-invasive sensors for electrical monitoring are purchased upfront. Volume discounts available
+                    based on quantity.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-coral-100 flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-coral-600"
+                  >
+                    <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                    <rect x="9" y="9" width="6" height="6"></rect>
+                    <line x1="9" y1="1" x2="9" y2="4"></line>
+                    <line x1="15" y1="1" x2="15" y2="4"></line>
+                    <line x1="9" y1="20" x2="9" y2="23"></line>
+                    <line x1="15" y1="20" x2="15" y2="23"></line>
+                    <line x1="20" y1="9" x2="23" y2="9"></line>
+                    <line x1="20" y1="14" x2="23" y2="14"></line>
+                    <line x1="1" y1="9" x2="4" y2="9"></line>
+                    <line x1="1" y1="14" x2="4" y2="14"></line>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium text-slate-900">Gateway Devices</h4>
+                  <p className="text-slate-600">
+                    Central data collection units that connect your sensors to our cloud platform. One gateway typically
+                    covers multiple sensors.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start">
+                <div className="flex-shrink-0 h-10 w-10 rounded-full bg-coral-100 flex items-center justify-center mr-4">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-coral-600"
+                  >
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-lg font-medium text-slate-900">Warranty</h4>
+                  <p className="text-slate-600">
+                    All hardware comes with a comprehensive 5-year warranty, ensuring long-term reliability and peace of
+                    mind.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="mx-auto max-w-4xl">
             <div className="bg-gradient-to-r from-coral-50 to-slate-50 rounded-xl p-8 mb-16">
               <h3 className="text-2xl font-bold text-slate-900 mb-4 text-center">Factors That Influence Pricing</h3>
@@ -260,48 +354,85 @@ export default function PricingPage() {
             <div className="text-center mb-16">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Value-Based Investment</h3>
               <p className="text-lg text-slate-600 mb-6">
-                Our solutions typically represent just <span className="text-coral-600 font-semibold">0.25-0.5%</span>{" "}
-                of your annual energy spend while delivering{" "}
-                <span className="text-coral-600 font-semibold">10-30%</span> in energy savings.
+                Our solutions typically represent just <span className="text-emerald-600 font-semibold">3%</span> of
+                your annual energy spend while delivering <span className="text-emerald-600 font-semibold">15%</span> in
+                energy savings.
               </p>
               <div className="bg-white rounded-lg shadow-sm border border-slate-100 p-6 max-w-xl mx-auto">
-                <div className="flex items-center justify-center mb-4">
-                  <div className="h-12 w-12 rounded-full bg-coral-100 flex items-center justify-center mr-4">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="h-16 w-16 rounded-full bg-gradient-to-r from-emerald-500 to-teal-600 shadow-md flex items-center justify-center mr-4">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="2"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-coral-600"
+                      className="h-8 w-8 text-white"
                     >
-                      <circle cx="12" cy="12" r="10"></circle>
-                      <path d="M16 8l-8 8"></path>
-                      <path d="M8 8l8 8"></path>
+                      <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
                     </svg>
                   </div>
-                  <h4 className="text-xl font-bold text-slate-900">ROI Calculator Example</h4>
+                  <h4 className="text-xl font-bold text-slate-900">ROI Calculator</h4>
                 </div>
-                <div className="grid grid-cols-2 gap-4 text-left">
-                  <div>
-                    <p className="text-sm text-slate-500">Annual Energy Spend</p>
-                    <p className="text-lg font-medium text-slate-900">$200,000</p>
+
+                <div className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-sm text-slate-500">Annual Energy Spend</p>
+                      <p className="text-lg font-medium text-slate-900">$200,000</p>
+                    </div>
+                    <div>
+                      <p className="text-sm text-slate-500">Annual Energy Savings</p>
+                      <p className="text-lg font-medium text-emerald-600">$30,000</p>
+                      <p className="text-xs text-slate-500">(15% of energy spend)</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-slate-500">Wattif Investment</p>
-                    <p className="text-lg font-medium text-slate-900">$600-1,000/month</p>
+
+                  <div className="border-t border-slate-100 pt-4">
+                    <p className="text-sm text-slate-500 mb-2">Investment</p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-slate-500">One-time Hardware</p>
+                        <p className="text-lg font-medium text-slate-900">$20,000</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500">Annual Software</p>
+                        <p className="text-lg font-medium text-slate-900">$6,000</p>
+                        <p className="text-xs text-slate-500">(3% of energy spend)</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-slate-500">Typical Energy Savings</p>
-                    <p className="text-lg font-medium text-coral-600">$20,000-60,000/year</p>
+
+                  <div className="border-t border-slate-100 pt-4">
+                    <p className="text-sm text-slate-500 mb-2">Results</p>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-slate-500">First Year Net Savings</p>
+                        <p className="text-lg font-medium text-emerald-600">$4,000</p>
+                        <p className="text-xs text-slate-500">(After hardware & software)</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500">Time to Recover Investment</p>
+                        <p className="text-lg font-medium text-emerald-600">12 months</p>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-sm text-slate-500">Typical ROI Period</p>
-                    <p className="text-lg font-medium text-coral-600">3-9 months</p>
+
+                  <div className="border-t border-slate-100 pt-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <p className="text-sm text-slate-500">5-Year Net Savings</p>
+                        <p className="text-lg font-medium text-emerald-600">$124,000</p>
+                        <p className="text-xs text-slate-500">($30k × 5 years - $26k costs)</p>
+                      </div>
+                      <div>
+                        <p className="text-sm text-slate-500">5-Year ROI</p>
+                        <p className="text-lg font-medium text-emerald-600">477%</p>
+                        <p className="text-xs text-slate-500">($124k return / $26k investment)</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -378,24 +509,24 @@ export default function PricingPage() {
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                   </svg>
                 </div>
-                All-Inclusive Approach
+                Software Subscription Model
               </h3>
               <ul className="space-y-3 text-sm text-slate-600">
                 <li className="flex items-start">
                   <CheckCircle2 className="mr-2 mt-0.5 h-4 w-4 text-coral-500" />
-                  <span>Hardware, software, installation, and support bundled in one subscription</span>
+                  <span>Software, implementation support, and ongoing maintenance bundled in one subscription</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="mr-2 mt-0.5 h-4 w-4 text-coral-500" />
-                  <span>No separate capital expense for sensors</span>
+                  <span>Hardware is a separate one-time purchase</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="mr-2 mt-0.5 h-4 w-4 text-coral-500" />
-                  <span>Maintenance and updates included</span>
+                  <span>Software updates and platform improvements included</span>
                 </li>
                 <li className="flex items-start">
                   <CheckCircle2 className="mr-2 mt-0.5 h-4 w-4 text-coral-500" />
-                  <span>Predictable operational expense for customers</span>
+                  <span>Predictable operational expense for ongoing services</span>
                 </li>
               </ul>
             </div>
@@ -501,8 +632,9 @@ export default function PricingPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-slate-600">
-                    All hardware, software, standard implementation, ongoing support, and regular system updates are
-                    included in your subscription. There are no hidden costs or separate hardware purchases required.
+                    The subscription includes all software access, standard implementation support, ongoing technical
+                    support, and regular system updates. Hardware components are purchased separately as a one-time
+                    investment.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -513,8 +645,9 @@ export default function PricingPage() {
                 </AccordionTrigger>
                 <AccordionContent>
                   <p className="text-slate-600">
-                    No. All sensors remain Wattif property and are included in your subscription. This ensures you
-                    always have the latest technology and eliminates concerns about hardware obsolescence.
+                    Yes. The monitoring sensors and gateway devices are a one-time purchase. We offer competitive
+                    pricing and volume discounts based on the size of your deployment. All hardware comes with a
+                    comprehensive 5-year warranty at no additional cost.
                   </p>
                 </AccordionContent>
               </AccordionItem>
@@ -529,6 +662,15 @@ export default function PricingPage() {
                     validate results in a specific area before expanding. Your subscription can grow flexibly as you
                     identify additional monitoring needs.
                   </p>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger className="text-left text-lg font-medium">
+                  Are there long-term contracts?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-slate-600"></p>
                 </AccordionContent>
               </AccordionItem>
 
@@ -568,17 +710,28 @@ export default function PricingPage() {
                   </p>
                 </AccordionContent>
               </AccordionItem>
+
+              <AccordionItem value="item-7">
+                <AccordionTrigger className="text-left text-lg font-medium">
+                  How much does the hardware cost?
+                </AccordionTrigger>
+                <AccordionContent>
+                  <p className="text-slate-600">
+                    Hardware costs vary based on your facility's specific requirements, the number of monitoring points
+                    needed, and the complexity of your electrical infrastructure. Our energy specialists will provide a
+                    detailed hardware quote after assessing your facility's needs. Typically, the hardware investment is
+                    recovered through energy savings within the first 6-12 months.
+                  </p>
+                </AccordionContent>
+              </AccordionItem>
             </Accordion>
           </div>
 
           <div className="mt-12 text-center">
             <p className="mb-6 text-slate-600">Have more questions about our pricing or solutions?</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex justify-center">
               <Button asChild className="bg-coral-500 hover:bg-coral-600">
                 <Link href="/contact">Schedule a Consultation</Link>
-              </Button>
-              <Button asChild variant="outline" className="border-coral-500 text-coral-500 hover:bg-coral-50">
-                <Link href="/contact">Request a Custom Quote</Link>
               </Button>
             </div>
           </div>

@@ -66,13 +66,13 @@ export function Footer() {
     <footer className="relative bg-slate-900 text-slate-300 overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b40_1px,transparent_1px),linear-gradient(to_bottom,#1e293b40_1px,transparent_1px)] [background-size:32px_32px] opacity-30"></div>
 
-      <div className="container mx-auto px-4 py-12 md:px-6">
+      <div className="container mx-auto px-4 py-12 md:px-6 relative z-10">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="mb-4 flex items-center">
-              {/* <span className="text-2xl font-bold text-coral-400">Wattif</span>
-              <span className="text-2xl font-light text-white">Tech</span> */}
-              <Image src="/Wattif_Logo_Black_Footer_Navigation.png" width={20} height={32} alt="Wattif Logo" className="h-10 w-auto" />  
+            <Link href="/" className="mb-4 flex items-center  flex-col justify-center gap-y-1 py-1 w-36">
+              <Image src="/logo-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+              <Image src="/tagline-white.png" width={20} height={32} alt="Wattif Logo" className="h-auto w-full" />
+
             </Link>
             <p className="mt-2 text-sm">
               Revealing the complete energy story of your business—showing you exactly where energy is being used, when,
@@ -84,23 +84,18 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-medium text-white">Solutions</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/solutions/enterprise" className="hover:text-coral-400">
-                  Wattif Enterprise
-                </Link>
-              </li>
-              <li>
                 <Link href="/solutions/elements" className="hover:text-coral-400">
                   Wattif Elements
                 </Link>
               </li>
               <li>
-                <Link href="/solutions/insights" className="hover:text-coral-400">
-                  Wattif Insights
+                <Link href="/solutions/enterprise" className="hover:text-coral-400">
+                  Wattif Enterprise
                 </Link>
               </li>
               <li>
-                <Link href="/solutions" className="hover:text-coral-400">
-                  All Solutions
+                <Link href="/solutions/insights" className="hover:text-coral-400">
+                  Wattif Insights
                 </Link>
               </li>
             </ul>
@@ -110,13 +105,8 @@ export function Footer() {
             <h3 className="mb-4 text-lg font-medium text-white">Industries</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/industries/hotels" className="hover:text-coral-400">
-                  Hotels
-                </Link>
-              </li>
-              <li>
-                <Link href="/industries/educational-buildings" className="hover:text-coral-400">
-                  Educational Buildings
+                <Link href="/industries/manufacturing-plants" className="hover:text-coral-400">
+                  Manufacturing Plants
                 </Link>
               </li>
               <li>
@@ -130,18 +120,18 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/industries/higher-education" className="hover:text-coral-400">
-                  Higher Education
+                <Link href="/industries/construction-sites" className="hover:text-coral-400">
+                  Construction Sites
                 </Link>
               </li>
               <li>
-                <Link href="/industries/multi-site-retail" className="hover:text-coral-400">
-                  Multi-Site Retail
+                <Link href="/industries/logistics-facilities" className="hover:text-coral-400">
+                  Logistics Facilities
                 </Link>
               </li>
               <li>
-                <Link href="/industries" className="hover:text-coral-400">
-                  All Industries
+                <Link href="/industries/r-and-d-facilities" className="hover:text-coral-400">
+                  R&D Facilities
                 </Link>
               </li>
             </ul>
@@ -166,14 +156,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="https://www.notch.energy/privacy-policy"
-                  className="hover:text-coral-400"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/privacy-policy" className="hover:text-coral-400">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
             </ul>
 
@@ -199,7 +184,13 @@ export function Footer() {
             </address>
 
             <div className="mt-4 flex space-x-4">
-              <a href="#" className="text-slate-400 hover:text-coral-400" aria-label="LinkedIn">
+              <a
+                href="https://www.linkedin.com/company/wattif-technologies/"
+                className="text-slate-400 hover:text-coral-400"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>

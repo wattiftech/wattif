@@ -59,7 +59,7 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description })
   </div>
 )
 
-export default function Home() {
+export default function HomePage() {
   const [activeTab, setActiveTab] = useState(0)
   const [selectedIndustry, setSelectedIndustry] = useState(0)
 
@@ -294,21 +294,27 @@ export default function Home() {
 
               <div className="flex flex-col space-y-3 sm:flex-row sm:space-x-4 sm:space-y-0">
                 <Button
+                  asChild
                   size="lg"
                   className="group relative overflow-hidden bg-coral-500 text-white transition-all hover:bg-coral-600"
                 >
-                  <span className="relative z-10 flex items-center">
-                    See Your Energy Clearly
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+                  <Link href="/solutions/elements">
+                    <span className="relative z-10 flex items-center">
+                      See Your Energy Clearly
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </Link>
                 </Button>
 
                 <Button
+                  asChild
                   size="lg"
                   variant="outline"
                   className="border-slate-700 bg-slate-900/50 text-slate-300 backdrop-blur-sm transition-all hover:border-coral-500 hover:text-coral-400"
                 >
-                  Calculate Potential Savings
+                  <Link href="#how-it-works">
+                    How it Works
+                  </Link>
                 </Button>
               </div>
             </div>

@@ -11,18 +11,19 @@ import {
   Server,
   Microscope,
   CheckCircle2,
-  Users,
   Warehouse,
   HardHat,
   Factory,
   Truck,
 } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { PageHeader } from "@/components/page-header"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 export default function ElementsPage() {
   const [activeTab, setActiveTab] = useState("commercial")
@@ -38,7 +39,7 @@ export default function ElementsPage() {
       id: "commercial",
       label: "Commercial Real Estate",
       icon: <Building className="h-5 w-5" />,
-      image: "/office-energy-monitoring.png",
+      image: "/commercial-real-estate.png",
       description: "Optimize energy usage across tenant spaces and common areas while reducing peak demand charges.",
       elements: [
         {
@@ -46,29 +47,49 @@ export default function ElementsPage() {
           icon: <Building />,
           description: "Track and allocate energy usage accurately by tenant without installing submeters.",
           benefits: [
-            "Accurately track energy consumption by tenant without submeters",
+            "Track and allocate energy usage accurately by tenant without installing submeters",
             "Identify after-hours usage for appropriate billing",
             "Support green lease compliance with verifiable data",
           ],
         },
         {
-          title: "Common Area Optimization",
-          icon: <Users />,
-          description: "Reduce waste in shared spaces while maintaining comfort and functionality.",
+          title: "Portfolio Analysis",
+          icon: <Building />,
+          description: "Track and allocate energy usage by tenant or property across your portfolio.",
           benefits: [
-            "Monitor lobby, corridor and amenity space consumption",
-            "Identify excessive ventilation or conditioning in transitional spaces",
-            "Optimize elevator and escalator energy usage patterns",
+            "Track and allocate energy usage by tenant or property",
+            "Compare performance across multiple buildings",
+            "Support green lease compliance and ESG reporting",
           ],
         },
         {
-          title: "Peak Demand Charge Reduction",
+          title: "Energy Optimization",
           icon: <BarChart3 />,
-          description: "Identify and mitigate peak demand events to reduce utility charges.",
+          description: "Optimize energy usage through intelligent scheduling and load management.",
           benefits: [
-            "Identify specific contributors to coincident peak loads",
-            "Develop staggered equipment schedules to reduce demand charges",
-            "Verify demand management strategy effectiveness",
+            "Optimize HVAC schedules and equipment operation",
+            "Reduce peak demand charges through load management",
+            "Automate lighting and equipment controls",
+          ],
+        },
+        {
+          title: "Energy Waste",
+          icon: <Clock />,
+          description: "Identify and eliminate unnecessary energy consumption throughout your facilities.",
+          benefits: [
+            "Identify after-hours energy consumption",
+            "Detect equipment running unnecessarily",
+            "Monitor and reduce common area inefficiencies",
+          ],
+        },
+        {
+          title: "Building Intelligence",
+          icon: <Server />,
+          description: "Monitor system performance and benchmark against industry standards.",
+          benefits: [
+            "Monitor system performance and equipment health",
+            "Benchmark against industry standards and similar properties",
+            "Track maintenance needs and efficiency trends",
           ],
         },
       ],
@@ -77,37 +98,47 @@ export default function ElementsPage() {
       id: "datacenters",
       label: "Data Centers",
       icon: <Server className="h-5 w-5" />,
-      image: "/modern-data-center-energy-monitoring.png",
+      image: "/data-centers.png",
       description: "Optimize PUE while ensuring reliability and supporting IT infrastructure needs.",
       elements: [
         {
-          title: "Cooling Efficiency Optimization",
+          title: "PUE Optimization",
           icon: <Thermometer />,
-          description: "Balance cooling needs with energy efficiency to reduce PUE.",
+          description: "Real-time power usage effectiveness monitoring and optimization.",
           benefits: [
-            "Identify hotspots and overcooled areas to balance airflow",
-            "Monitor CRAC/CRAH unit performance and detect degradation",
-            "Track cooling energy per kW of IT load to optimize PUE",
+            "Real-time power usage effectiveness monitoring",
+            "Cooling system efficiency analysis",
+            "Infrastructure utilization optimization",
           ],
         },
         {
-          title: "Auxiliary System Monitoring",
+          title: "Critical System Monitoring",
           icon: <Server />,
-          description: "Ensure support systems operate efficiently without wasting energy.",
+          description: "Ensure reliability and prevent downtime with proactive monitoring.",
           benefits: [
-            "Track UPS efficiency and operating parameters",
-            "Monitor support equipment energy consumption",
-            "Identify parasitic loads that increase overall energy footprint",
+            "Equipment reliability tracking and fault detection",
+            "Predictive failure alerts before downtime occurs",
+            "Mission-critical system redundancy validation",
           ],
         },
         {
-          title: "IT Equipment Load Analysis",
-          icon: <BarChart3 />,
-          description: "Identify opportunities to optimize IT infrastructure energy use.",
+          title: "Cooling Efficiency Analysis",
+          icon: <Thermometer />,
+          description: "Optimize cooling systems for maximum efficiency and reliability.",
           benefits: [
-            "Identify zombie servers and underutilized equipment",
-            "Correlate server loads with cooling requirements",
-            "Support IT refresh ROI calculations with actual energy data",
+            "Rack-level thermal monitoring and hotspot detection",
+            "Airflow pattern optimization recommendations",
+            "Temperature differential analysis across zones",
+          ],
+        },
+        {
+          title: "Capacity Planning",
+          icon: <BarChart3 />,
+          description: "Plan for future growth with data-driven capacity insights.",
+          benefits: [
+            "Power consumption forecasting based on growth trends",
+            "Infrastructure utilization reporting for expansion planning",
+            "Real-time capacity vs. demand monitoring",
           ],
         },
       ],
@@ -116,37 +147,47 @@ export default function ElementsPage() {
       id: "construction",
       label: "Construction Sites",
       icon: <HardHat className="h-5 w-5" />,
-      image: "/energy-monitoring-dashboard.png",
+      image: "/construction-site.png",
       description: "Monitor and optimize energy usage across temporary power systems and construction equipment.",
       elements: [
+        {
+          title: "Equipment Utilization Tracking",
+          icon: <HardHat />,
+          description: "Monitor and optimize construction equipment energy consumption.",
+          benefits: [
+            "Monitor heavy equipment energy consumption",
+            "Track crane and pump efficiency patterns",
+            "Identify idle equipment waste and optimization opportunities",
+          ],
+        },
         {
           title: "Temporary Power Optimization",
           icon: <Clock />,
           description: "Reduce waste from temporary power systems and equipment.",
           benefits: [
-            "Track generator efficiency and fuel consumption",
-            "Identify equipment left running during off-hours",
-            "Optimize temporary HVAC during interior finishing phases",
+            "Optimize generator fuel consumption and scheduling",
+            "Balance load distribution across temporary panels",
+            "Minimize peak demand charges from utility connections",
           ],
         },
         {
-          title: "Equipment Usage Analysis",
-          icon: <HardHat />,
-          description: "Monitor construction equipment energy consumption and utilization.",
+          title: "Project Cost Allocation",
+          icon: <BarChart3 />,
+          description: "Allocate energy costs accurately across project phases and contractors.",
           benefits: [
-            "Track energy consumption of major equipment",
-            "Identify underutilized equipment for potential sharing",
-            "Support accurate job costing with detailed energy data",
+            "Allocate energy costs by project phase and contractor",
+            "Track energy consumption per square foot of construction",
+            "Support LEED and green building certification efforts",
           ],
         },
         {
-          title: "Site Office Efficiency",
-          icon: <Building />,
-          description: "Optimize energy use in temporary offices and facilities.",
+          title: "Safety and Compliance Monitoring",
+          icon: <CheckCircle2 />,
+          description: "Ensure electrical safety and code compliance throughout construction.",
           benefits: [
-            "Monitor and control temporary office energy consumption",
-            "Identify opportunities for lighting and HVAC optimization",
-            "Demonstrate sustainability commitments with verified data",
+            "Monitor electrical system load balancing for safety",
+            "Track temporary lighting adequacy and efficiency",
+            "Ensure electrical code compliance throughout construction",
           ],
         },
       ],
@@ -155,37 +196,47 @@ export default function ElementsPage() {
       id: "logistics",
       label: "Logistics Facilities",
       icon: <Truck className="h-5 w-5" />,
-      image: "/modern-manufacturing-energy-monitoring.png",
+      image: "/logistics-facility.png",
       description: "Optimize energy across loading docks, storage areas, and material handling systems.",
       elements: [
+        {
+          title: "Zone-Based Energy Management",
+          icon: <Warehouse />,
+          description: "Optimize energy across different operational zones in logistics facilities.",
+          benefits: [
+            "Monitor picking, packing, and storage areas separately",
+            "Optimize HVAC zones based on operational activity",
+            "Track energy consumption per unit processed",
+          ],
+        },
         {
           title: "Loading Dock Optimization",
           icon: <Truck />,
           description: "Reduce energy waste in high-traffic loading and unloading areas.",
           benefits: [
-            "Minimize thermal losses from open dock doors",
-            "Optimize dock equipment energy consumption",
-            "Track and reduce idle time energy waste",
+            "Monitor dock door and seal energy usage",
+            "Optimize dock leveler efficiency patterns",
+            "Track and manage reefer plug-in consumption",
           ],
         },
         {
-          title: "Warehouse Climate Control",
+          title: "Cold Storage Efficiency",
           icon: <Thermometer />,
-          description: "Balance climate needs with energy efficiency in large storage spaces.",
+          description: "Optimize refrigeration systems and cold storage energy usage.",
           benefits: [
-            "Optimize stratification in high-bay storage areas",
-            "Monitor temperature and humidity in sensitive storage zones",
-            "Identify opportunities for zoned climate control",
+            "Temperature differential monitoring across refrigerated zones",
+            "Refrigeration system performance optimization",
+            "Energy allocation by storage temperature requirement",
           ],
         },
         {
-          title: "Material Handling Equipment",
-          icon: <Warehouse />,
-          description: "Monitor and optimize energy use of conveyor systems and equipment.",
+          title: "Automated Systems Monitoring",
+          icon: <Server />,
+          description: "Track and optimize energy usage of automated warehouse systems.",
           benefits: [
-            "Track energy consumption of conveyor systems",
-            "Optimize charging schedules for electric forklifts and AGVs",
-            "Identify equipment requiring maintenance based on energy signatures",
+            "Track conveyor belt and sortation system efficiency",
+            "Monitor warehouse management system energy usage",
+            "Optimize robotic picker and packer energy consumption",
           ],
         },
       ],
@@ -198,33 +249,43 @@ export default function ElementsPage() {
       description: "Balance precise environmental control with energy efficiency in research environments.",
       elements: [
         {
-          title: "Specialized Equipment Monitoring",
-          icon: <Microscope />,
-          description: "Track and optimize energy use of specialized research equipment.",
-          benefits: [
-            "Track energy use of research-specific equipment",
-            "Identify idle equipment still consuming standby power",
-            "Support research grant energy allocation and reporting",
-          ],
-        },
-        {
-          title: "Environmental Condition Efficiency",
+          title: "Precision Environmental Control",
           icon: <Thermometer />,
           description: "Maintain critical environmental parameters while minimizing energy waste.",
           benefits: [
-            "Monitor energy needed to maintain critical parameters",
-            "Identify opportunities to optimize without compromising research",
-            "Track energy impact of clean room and containment systems",
+            "Monitor critical temperature and humidity zones",
+            "Validate research environment stability for compliance",
+            "Track fume hood and clean room energy requirements",
           ],
         },
         {
-          title: "Safety System Optimization",
-          icon: <Server />,
-          description: "Ensure safety systems operate efficiently without compromising protection.",
+          title: "Experiment Correlation Analysis",
+          icon: <Microscope />,
+          description: "Track energy patterns in relation to research activities and outcomes.",
           benefits: [
-            "Ensure fume hoods and safety systems operate efficiently",
-            "Monitor backup and redundant systems for waste",
-            "Identify opportunities to reduce energy without compromising safety",
+            "Correlate energy patterns with research outcomes",
+            "Identify equipment performance impacts on results",
+            "Support research reproducibility and documentation",
+          ],
+        },
+        {
+          title: "Lab Equipment Efficiency",
+          icon: <Server />,
+          description: "Optimize energy usage of specialized laboratory equipment.",
+          benefits: [
+            "Monitor specialized research equipment performance",
+            "Track energy consumption per experiment or test",
+            "Optimize equipment scheduling and usage patterns",
+          ],
+        },
+        {
+          title: "Clean Room Optimization",
+          icon: <CheckCircle2 />,
+          description: "Maximize energy efficiency in clean room environments.",
+          benefits: [
+            "Monitor air filtration system efficiency",
+            "Track particulate levels vs. energy consumption",
+            "Optimize clean room pressure and airflow management",
           ],
         },
       ],
@@ -233,37 +294,47 @@ export default function ElementsPage() {
       id: "industrial",
       label: "Industrial Plants",
       icon: <Factory className="h-5 w-5" />,
-      image: "/modern-manufacturing-facility.png",
+      image: "/industrial-plant.png",
       description: "Optimize energy across production lines, equipment, and facility systems.",
       elements: [
         {
-          title: "Production Line Monitoring",
-          icon: <Factory />,
-          description: "Track and optimize energy consumption across manufacturing processes.",
-          benefits: [
-            "Monitor energy consumption per unit produced",
-            "Identify inefficient equipment or processes",
-            "Support lean manufacturing initiatives with energy data",
-          ],
-        },
-        {
-          title: "Compressed Air Optimization",
+          title: "Peak Demand Charge Reduction",
           icon: <BarChart3 />,
-          description: "Reduce waste in one of manufacturing's most expensive utilities.",
+          description: "Identify and mitigate peak demand events to reduce utility charges.",
           benefits: [
-            "Detect and address compressed air leaks",
-            "Optimize compressor cycling and pressure settings",
-            "Track compressed air energy per unit of production",
+            "Identify specific contributors to coincident peak loads",
+            "Develop staggered equipment schedules to reduce demand charges",
+            "Verify demand management strategy effectiveness",
           ],
         },
         {
-          title: "Process Heating Efficiency",
-          icon: <Thermometer />,
-          description: "Optimize energy-intensive heating processes and equipment.",
+          title: "Process Optimization",
+          icon: <Factory />,
+          description: "Optimize energy across production processes and equipment.",
           benefits: [
-            "Monitor energy efficiency of furnaces and ovens",
-            "Identify heat recovery opportunities",
-            "Optimize process temperature profiles for energy savings",
+            "Production efficiency insights and energy correlations",
+            "Equipment performance trending and analysis",
+            "Real-time optimization recommendations for operations",
+          ],
+        },
+        {
+          title: "Predictive Maintenance",
+          icon: <Clock />,
+          description: "Predict equipment failures before they occur based on energy patterns.",
+          benefits: [
+            "Equipment failure prediction based on energy patterns",
+            "Maintenance scheduling optimization to prevent downtime",
+            "Cost avoidance through early intervention strategies",
+          ],
+        },
+        {
+          title: "Regulatory Compliance",
+          icon: <CheckCircle2 />,
+          description: "Automate energy-related regulatory compliance reporting.",
+          benefits: [
+            "Environmental reporting automation for EPA requirements",
+            "Energy audit documentation and verification",
+            "Track emissions correlation with energy usage patterns",
           ],
         },
       ],
@@ -283,7 +354,7 @@ export default function ElementsPage() {
       <PageHeader
         title="Wattif Elements"
         description="Energy-Focused Solutions for Six Building Types"
-        // image="/modular-energy-dashboard.png"
+      // image="/modular-energy-dashboard.png"
       />
 
       {/* Hero Section with Animated Illustration */}
@@ -299,12 +370,16 @@ export default function ElementsPage() {
                 challenges.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="bg-coral-500 hover:bg-coral-600">
-                  Find Your Elements
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Button asChild size="lg" className="bg-coral-500 hover:bg-coral-600">
+                  <Link href="#select-your-building-type">
+                    Find Your Elements
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
                 </Button>
-                <Button size="lg" variant="outline">
-                  Schedule Consultation
+                <Button asChild size="lg" variant="outline">
+                  <Link href="/contact">
+                    Schedule Consultation
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -325,7 +400,7 @@ export default function ElementsPage() {
       </section>
 
       {/* Building Type Selector */}
-      <section className="py-16 bg-slate-50">
+      <section className="py-16 bg-slate-50" id="#select-your-building-type">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Select Your Building Type</h2>
@@ -405,7 +480,7 @@ export default function ElementsPage() {
               </div>
 
               {/* Elements Cards */}
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-2 gap-8">
                 {currentBuildingType.elements.map((element, index) => (
                   <motion.div
                     key={index}
@@ -415,8 +490,8 @@ export default function ElementsPage() {
                   >
                     <Card className="overflow-hidden border-slate-200 transition-all duration-300 hover:shadow-lg h-full">
                       <CardContent className="p-6 flex flex-col h-full">
-                        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-coral-100">
-                          <div className="text-coral-600">{element.icon}</div>
+                        <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-coral-100 to-coral-200 shadow-sm">
+                          <div className="text-coral-600 h-7 w-7">{element.icon}</div>
                         </div>
                         <h3 className="mb-3 text-xl font-semibold">{element.title}</h3>
                         <p className="mb-6 text-slate-600">{element.description}</p>
@@ -443,51 +518,79 @@ export default function ElementsPage() {
                             {activeTab === "commercial" &&
                               element.title === "Peak Demand Charge Reduction" &&
                               "Start Cutting Charges"}
+                            {activeTab === "commercial" &&
+                              element.title === "Lighting and Scheduling Optimization" &&
+                              "Start Optimizing Lighting"}
+
                             {activeTab === "datacenters" &&
-                              element.title === "Cooling Efficiency Optimization" &&
+                              element.title === "PUE Optimization" &&
                               "Start Optimizing PUE"}
                             {activeTab === "datacenters" &&
-                              element.title === "Auxiliary System Monitoring" &&
-                              "Start Reducing Overhead"}
+                              element.title === "Critical System Monitoring" &&
+                              "Start Monitoring Systems"}
                             {activeTab === "datacenters" &&
-                              element.title === "IT Equipment Load Analysis" &&
-                              "Start Identifying Waste"}
+                              element.title === "Cooling Efficiency Analysis" &&
+                              "Start Analyzing Cooling"}
+                            {activeTab === "datacenters" &&
+                              element.title === "Capacity Planning" &&
+                              "Start Planning Capacity"}
+
+                            {activeTab === "construction" &&
+                              element.title === "Equipment Utilization Tracking" &&
+                              "Start Tracking Equipment"}
                             {activeTab === "construction" &&
                               element.title === "Temporary Power Optimization" &&
-                              "Start Reducing Waste"}
+                              "Start Optimizing Power"}
                             {activeTab === "construction" &&
-                              element.title === "Equipment Usage Analysis" &&
-                              "Start Tracking Equipment"}
+                              element.title === "Project Cost Allocation" &&
+                              "Start Allocating Costs"}
                             {activeTab === "construction" &&
-                              element.title === "Site Office Efficiency" &&
-                              "Start Optimizing Offices"}
+                              element.title === "Safety and Compliance Monitoring" &&
+                              "Start Monitoring Safety"}
+
+                            {activeTab === "logistics" &&
+                              element.title === "Zone-Based Energy Management" &&
+                              "Start Managing Zones"}
                             {activeTab === "logistics" &&
                               element.title === "Loading Dock Optimization" &&
-                              "Start Reducing Losses"}
+                              "Start Optimizing Docks"}
                             {activeTab === "logistics" &&
-                              element.title === "Warehouse Climate Control" &&
-                              "Start Balancing Climate"}
+                              element.title === "Cold Storage Efficiency" &&
+                              "Start Optimizing Storage"}
                             {activeTab === "logistics" &&
-                              element.title === "Material Handling Equipment" &&
-                              "Start Optimizing Systems"}
+                              element.title === "Automated Systems Monitoring" &&
+                              "Start Monitoring Systems"}
+
                             {activeTab === "rd" &&
-                              element.title === "Specialized Equipment Monitoring" &&
-                              "Start Tracking Equipment"}
+                              element.title === "Precision Environmental Control" &&
+                              "Start Controlling Environment"}
                             {activeTab === "rd" &&
-                              element.title === "Environmental Condition Efficiency" &&
-                              "Start Balancing Conditions"}
+                              element.title === "Experiment Correlation Analysis" &&
+                              "Start Analyzing Experiments"}
                             {activeTab === "rd" &&
-                              element.title === "Safety System Optimization" &&
-                              "Start Improving Safety"}
+                              element.title === "Lab Equipment Efficiency" &&
+                              "Start Optimizing Equipment"}
+                            {activeTab === "rd" &&
+                              element.title === "Clean Room Optimization" &&
+                              "Start Optimizing Clean Rooms"}
+
                             {activeTab === "industrial" &&
-                              element.title === "Production Line Monitoring" &&
-                              "Start Tracking Production"}
+                              element.title === "Peak Demand Charge Reduction" &&
+                              "Start Reducing Charges"}
                             {activeTab === "industrial" &&
-                              element.title === "Compressed Air Optimization" &&
-                              "Start Reducing Leaks"}
+                              element.title === "Process Optimization" &&
+                              "Start Optimizing Processes"}
                             {activeTab === "industrial" &&
-                              element.title === "Process Heating Efficiency" &&
-                              "Start Optimizing Heat"}
+                              element.title === "Predictive Maintenance" &&
+                              "Start Predicting Maintenance"}
+                            {activeTab === "industrial" &&
+                              element.title === "Regulatory Compliance" &&
+                              "Start Automating Compliance"}
+
+                            {activeTab === "commercial" &&
+                              element.title === "Building Intelligence" &&
+                              "Start Monitoring Performance"}
+
                             <ArrowRight className="ml-1 h-4 w-4" />
                           </Button>
                         </div>

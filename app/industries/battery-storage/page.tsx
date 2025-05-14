@@ -8,7 +8,7 @@ import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { PageHeader } from "@/components/page-header"
 
-export default function RDFacilitiesPage() {
+export default function BatteryStoragePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
