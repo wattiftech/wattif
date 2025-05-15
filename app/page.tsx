@@ -457,7 +457,7 @@ export default function HomePage() {
                 <div className="absolute -inset-3 bg-gradient-to-r from-coral-200/30 to-coral-300/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
                   <Image
-                    src="/energy-sensor-connection.png"
+                    src="/Wattif_Sensors_Install_1.svg"
                     alt="Wattif energy sensor quick connection system"
                     width={300}
                     height={200}
@@ -482,7 +482,7 @@ export default function HomePage() {
                 <div className="absolute -inset-3 bg-gradient-to-r from-coral-200/30 to-coral-300/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
                   <Image
-                    src="/energy-analytics-dashboard-detail.png"
+                    src="/Wattif_Sensors_Install_2.svg"
                     alt="Wattif detailed energy monitoring dashboard"
                     width={300}
                     height={200}
@@ -624,7 +624,7 @@ export default function HomePage() {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f9ff20_1px,transparent_1px),linear-gradient(to_bottom,#f0f9ff20_1px,transparent_1px)] [background-size:24px_24px] opacity-70"></div>
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent"></div>
-        <div className="container mx-auto px-4 md:px-6">
+        <div className="container mx-auto px-4 md:px-6 relative z-20">
           <h2 className="mb-4 text-center text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
             Tailored Energy Intelligence for Every Industry
           </h2>
@@ -665,14 +665,14 @@ export default function HomePage() {
               icon={<ShoppingBag className="h-8 w-8" />}
               title="Logistics Facilities"
               description="Place sensors throughout vast warehouses, loading docks, and cold storage areas with zero wiring or battery logistics."
-              href="/industries/logistics-warehouses"
+              href="/industries/logistics-facilities"
             />
 
             <IndustryCard
               icon={<Microscope className="h-8 w-8" />}
               title="R&D"
               description="Install sensors in sensitive labs, cleanrooms, and test environments without disrupting operations or introducing maintenance cycles."
-              href="/industries/battery-storage"
+              href="/industries/r-and-d-facilities"
             />
           </div>
 

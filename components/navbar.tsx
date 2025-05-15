@@ -80,7 +80,7 @@ export function Navbar() {
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
                 <Link href="/industries/industrial-plants" className="cursor-pointer">
-                  Manufacturing Plants
+                  Industrial Plants
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
@@ -198,7 +198,7 @@ export function Navbar() {
                       className="text-slate-600 hover:text-coral-500"
                       onClick={() => setIsOpen(false)}
                     >
-                      Manufacturing Plants
+                      Industrial Plants
                     </Link>
                     <Link
                       href="/industries/logistics-facilities"

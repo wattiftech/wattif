@@ -72,7 +72,7 @@ export function HowItWorks() {
   }
 
   return (
-    <div ref={sectionRef} className="py-16 bg-slate-50">
+    <div ref={sectionRef} className="py-16 bg-slate-50 relative z-20">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-slate-900 mb-16 text-center">Four Steps to Energy Clarity</h2>
 

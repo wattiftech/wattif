@@ -106,7 +106,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/industries/industrial-plants" className="hover:text-coral-400">
-                  Manufacturing Plants
+                  Industrial Plants
                 </Link>
               </li>
               <li>

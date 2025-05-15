@@ -22,7 +22,7 @@ export default function IndustriesPage() {
             href="/industries/commercial-real-estate"
           />
           <IndustryCard
-            title="Manufacturing Plants"
+            title="Industrial Plants"
             description="Align energy use with production demands and identify high-cost systems to reduce waste while maintaining output."
             icon={<Factory className="h-10 w-10 text-coral-500" />}
             href="/industries/industrial-plants"
