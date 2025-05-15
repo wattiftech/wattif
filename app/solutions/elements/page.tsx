@@ -511,10 +511,19 @@ export default function ElementsPage() {
                             <Button
                               variant="outline"
                               className="w-full border-coral-200 text-coral-700 hover:bg-coral-50"
-                            >
-                              {
+                            >                              {
                                 element.title === "Tenant Energy Attribution" &&
                                 "Start Allocating Costs"}
+                              {
+                                element.title === "Portfolio Analysis" &&
+                                "Start Analyzing Portfolio"}
+                              {
+                                element.title === "Energy Optimization" &&
+                                "Start Optimizing Energy"}
+                              {
+                                element.title === "Energy Waste" &&
+                                "Start Reducing Waste"}
+
                               {
                                 element.title === "Common Area Optimization" &&
                                 "Start Reducing Waste"}
@@ -577,20 +586,20 @@ export default function ElementsPage() {
                                 element.title === "Clean Room Optimization" &&
                                 "Start Optimizing Clean Rooms"}
 
-                              {activeTab === "industrial" &&
+                              {
                                 element.title === "Peak Demand Charge Reduction" &&
                                 "Start Reducing Charges"}
-                              {activeTab === "industrial" &&
+                              {
                                 element.title === "Process Optimization" &&
                                 "Start Optimizing Processes"}
-                              {activeTab === "industrial" &&
+                              {
                                 element.title === "Predictive Maintenance" &&
                                 "Start Predicting Maintenance"}
-                              {activeTab === "industrial" &&
+                              {
                                 element.title === "Regulatory Compliance" &&
                                 "Start Automating Compliance"}
 
-                              {activeTab === "commercial" &&
+                              {
                                 element.title === "Building Intelligence" &&
                                 "Start Monitoring Performance"}
 
