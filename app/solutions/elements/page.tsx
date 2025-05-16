@@ -24,6 +24,13 @@ import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import contructionImage from "@/public/commercial-real-estate.png"
+import dataCentersImage from "@/public/data-centers.png"
+import constructionSiteImage from "@/public/construction-site.png"
+import logisticsFacilityImage from "@/public/logistics-facility.png"
+import energyMonitoringImage from "@/public/energy-monitoring-dashboard.png"
+import industrialPlantImage from "@/public/industrial-plant.png"
+
 
 export default function ElementsPage() {
   const [activeTab, setActiveTab] = useState("commercial-real-estate")
@@ -39,7 +46,7 @@ export default function ElementsPage() {
       id: "commercial-real-estate",
       label: "Commercial Real Estate",
       icon: <Building className="h-5 w-5" />,
-      image: "/commercial-real-estate.png",
+      image: contructionImage,
       description: "Optimize energy usage across tenant spaces and common areas while reducing peak demand charges.",
       elements: [
         {
@@ -98,7 +105,7 @@ export default function ElementsPage() {
       id: "data-centers",
       label: "Data Centers",
       icon: <Server className="h-5 w-5" />,
-      image: "/data-centers.png",
+      image: dataCentersImage,
       description: "Optimize PUE while ensuring reliability and supporting IT infrastructure needs.",
       elements: [
         {
@@ -147,7 +154,7 @@ export default function ElementsPage() {
       id: "construction-sites",
       label: "Construction Sites",
       icon: <HardHat className="h-5 w-5" />,
-      image: "/construction-site.png",
+      image: constructionSiteImage,
       description: "Monitor and optimize energy usage across temporary power systems and construction equipment.",
       elements: [
         {
@@ -196,7 +203,7 @@ export default function ElementsPage() {
       id: "logistics-facilities",
       label: "Logistics Facilities",
       icon: <Truck className="h-5 w-5" />,
-      image: "/logistics-facility.png",
+      image: logisticsFacilityImage,
       description: "Optimize energy across loading docks, storage areas, and material handling systems.",
       elements: [
         {
@@ -245,7 +252,7 @@ export default function ElementsPage() {
       id: "r-and-d-facilities",
       label: "R&D Facilities",
       icon: <Microscope className="h-5 w-5" />,
-      image: "/energy-monitoring-dashboard.png",
+      image: energyMonitoringImage,
       description: "Balance precise environmental control with energy efficiency in research environments.",
       elements: [
         {
@@ -294,7 +301,7 @@ export default function ElementsPage() {
       id: "industrial-plants",
       label: "Industrial Plants",
       icon: <Factory className="h-5 w-5" />,
-      image: "/industrial-plant.png",
+      image: industrialPlantImage,
       description: "Optimize energy across production lines, equipment, and facility systems.",
       elements: [
         {
@@ -473,6 +480,7 @@ export default function ElementsPage() {
                     <Image
                       src={currentBuildingType.image || "/placeholder.svg"}
                       alt={`${currentBuildingType.label} energy monitoring`}
+                      placeholder="blur"
                       width={600}
                       height={400}
                       className="object-cover w-full h-full"
