@@ -431,7 +431,8 @@ export default function HomePage() {
                 <div className="absolute -inset-3 bg-gradient-to-r from-coral-200/30 to-coral-300/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
                   <Image
-                    src="/energy-sensor-installation.png"
+                    // src="/energy-sensor-installation.png"
+                    src={'/Wattif_Sensors_Install_2.svg'}
                     alt="Wattif self-powered energy sensor installation"
                     width={300}
                     height={200}
@@ -457,6 +458,8 @@ export default function HomePage() {
                 <div className="absolute -inset-3 bg-gradient-to-r from-coral-200/30 to-coral-300/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
                   <Image
+                    // src="/energy-sensor-connection.png"
+
                     src="/Wattif_Sensors_Install_1.svg"
                     alt="Wattif energy sensor quick connection system"
                     width={300}
@@ -482,7 +485,8 @@ export default function HomePage() {
                 <div className="absolute -inset-3 bg-gradient-to-r from-coral-200/30 to-coral-300/30 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
                   <Image
-                    src="/Wattif_Sensors_Install_2.svg"
+                    src="/energy-analytics-dashboard-detail.png"
+
                     alt="Wattif detailed energy monitoring dashboard"
                     width={300}
                     height={200}

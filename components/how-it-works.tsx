@@ -80,6 +80,7 @@ export function HowItWorks() {
           {steps.map((step, index) => (
             <div
               key={index}
+              
               ref={(el) => (stepRefs.current[index] = el)}
               className={cn("mb-24 scroll-mt-24", index === steps.length - 1 ? "mb-0" : "")}
             >
