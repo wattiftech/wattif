@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
+import about_image from "@/public/about.png"
 
 export default function AboutPage() {
   return (
@@ -80,9 +81,11 @@ export default function AboutPage() {
             <div className="flex items-center justify-center">
               <div className="relative h-[400px] w-full overflow-hidden rounded-lg shadow-xl">
                 <Image
-                  src="/placeholder.svg?key=jtstj"
+                  src={about_image}
                   alt="Wattif Technologies headquarters"
                   fill
+                  placeholder="blur"
+                  
                   className="object-cover"
                 />
               </div>
