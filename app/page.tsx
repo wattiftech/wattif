@@ -432,7 +432,7 @@ export default function HomePage() {
                 <div className="relative overflow-hidden rounded-xl shadow-lg border border-coral-100/50">
                   <Image
                     // src="/energy-sensor-installation.png"
-                    src={'/Wattif_Sensors_Install_2.svg'}
+                    src={'/Wattif_Sensors_Install_2.png'}
                     alt="Wattif self-powered energy sensor installation"
                     width={300}
                     height={200}
